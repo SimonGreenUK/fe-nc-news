@@ -1,5 +1,6 @@
 import React from 'react';
 import * as api from './utils/api';
+import * as utils from './utils/utils';
 import ArticleCard from './ArticleCard';
 
 class ArticlesList extends React.Component {
@@ -8,11 +9,11 @@ class ArticlesList extends React.Component {
   };
   render() {
     return (
-      <main className="main">
+      <ul>
         {this.state.articles.map(article => {
           return <ArticleCard article={article} key={article.article_id} />;
         })}
-      </main>
+      </ul>
     );
   }
 
@@ -27,9 +28,14 @@ class ArticlesList extends React.Component {
   }
 
   fetchArticles = topic => {
-    api.getArticles(topic).then(articles => {
-      this.setState({ articles });
-    });
+    api
+      .getArticles(topic)
+      .then(articles => {
+        return articles.map(article => utils.topicFormatter(article));
+      })
+      .then(articles => {
+        this.setState({ articles });
+      });
   };
 }
 

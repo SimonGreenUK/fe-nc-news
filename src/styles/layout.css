@@ -9,7 +9,7 @@ body {
 .App {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 100px 1fr 150px;
   grid-template-areas:
     'header header'
     'main sidebar'
@@ -23,7 +23,7 @@ body {
 
 .main {
   grid-area: main;
-  min-height: 60vh;
+  min-height: 80vh;
   border: 1px solid green;
 }
 .sidebar {

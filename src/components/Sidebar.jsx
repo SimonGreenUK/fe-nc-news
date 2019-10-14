@@ -9,13 +9,19 @@ class Sidebar extends Component {
   render() {
     return (
       <aside className="sidebar">
+        <h2>Topics</h2>
         <li>
-          <Link to={'/articles'}>all articles</Link>
+          <Link to={'/articles'}>All</Link>
         </li>
         {this.state.topics.map(topic => {
           return (
             <li key={topic.slug}>
-              <Link to={`/articles/${topic.slug}`}>{topic.slug}</Link>
+              <Link to={`/articles/${topic.slug}`}>
+                {topic.slug
+                  .slice()
+                  .charAt(0)
+                  .toUpperCase() + topic.slug.slice(1)}
+              </Link>
             </li>
           );
         })}

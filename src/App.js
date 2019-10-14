@@ -10,10 +10,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router>
-        <ArticlesList path="/articles" />
-        <ArticlesList path="/articles/:topic" />
-      </Router>
+      <main className="main">
+        <Router primary={false}>
+          <ArticlesList path="/articles" />
+          <ArticlesList path="/articles/:topic" />
+        </Router>
+      </main>
       <Sidebar />
       <Footer />
     </div>
