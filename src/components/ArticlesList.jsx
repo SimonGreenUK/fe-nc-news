@@ -2,21 +2,28 @@ import React from 'react';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import ArticleCard from './ArticleCard';
+import SortSelect from './SortSelect';
 
 class ArticlesList extends React.Component {
   state = {
     articles: [],
-    isLoading: true
+    isLoading: true,
+    sort_by: ''
   };
   render() {
     return (
       <>
         {!this.state.isLoading && (
-          <ul>
-            {this.state.articles.map(article => {
-              return <ArticleCard article={article} key={article.article_id} />;
-            })}
-          </ul>
+          <>
+            <SortSelect updateArticleSort={this.updateArticleSort} />
+            <ul>
+              {this.state.articles.map(article => {
+                return (
+                  <ArticleCard article={article} key={article.article_id} />
+                );
+              })}
+            </ul>
+          </>
         )}
         {this.state.isLoading && (
           <h2>
@@ -31,16 +38,19 @@ class ArticlesList extends React.Component {
     this.fetchArticles(this.props.topic);
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.topic !== this.props.topic) {
       this.fetchArticles(this.props.topic);
       this.setState({ isLoading: true });
+    } else if (prevState.sort_by !== this.state.sort_by) {
+      this.fetchArticles(this.props.topic, this.state.sort_by);
+      // this.setState({ isLoading: true });
     }
   }
 
-  fetchArticles = topic => {
+  fetchArticles = (topic, sort_by) => {
     api
-      .getArticles(topic)
+      .getArticles(topic, sort_by)
       .then(articles => {
         this.setState({ articles, isLoading: false });
       })
@@ -50,6 +60,10 @@ class ArticlesList extends React.Component {
           replace: true
         });
       });
+  };
+
+  updateArticleSort = sort_by => {
+    this.setState({ sort_by });
   };
 }
 

@@ -4,10 +4,11 @@ const instance = axios.create({
   baseURL: 'https://nc-news-sg.herokuapp.com/api/'
 });
 
-export const getArticles = async topic => {
+export const getArticles = async (topic, sort_by) => {
   const { data } = await instance.get('/articles', {
     params: {
-      topic
+      topic,
+      sort_by
     }
   });
 
