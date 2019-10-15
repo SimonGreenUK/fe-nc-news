@@ -17,6 +17,7 @@ class SingleArticle extends React.Component {
       topic,
       author,
       created_at,
+      comment_count,
       body
     } = this.state.article;
     return (
@@ -30,13 +31,16 @@ class SingleArticle extends React.Component {
             <p>Author: {author}</p>
             <p>{utils.formatDate(created_at)}</p>
             <p>{body}</p>
-            <h4>Comments</h4>
-            <CommentsList article_id={article_id} />
+            <h4>{comment_count} comments</h4>
+            <CommentsList
+              article_id={article_id}
+              loggedInUser={this.props.loggedInUser}
+            />
           </div>
         )}
         {this.state.isLoading && (
           <h2>
-            <strong>LOADING ARTICLES...</strong>
+            <strong>LOADING...</strong>
           </h2>
         )}
       </>

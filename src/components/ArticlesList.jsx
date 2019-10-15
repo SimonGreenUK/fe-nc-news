@@ -27,7 +27,7 @@ class ArticlesList extends React.Component {
         )}
         {this.state.isLoading && (
           <h2>
-            <strong>LOADING ARTICLES...</strong>
+            <strong>LOADING...</strong>
           </h2>
         )}
       </>

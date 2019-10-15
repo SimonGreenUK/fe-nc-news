@@ -32,7 +32,7 @@ class Sidebar extends Component {
           )}
           {this.state.isLoading && (
             <h2>
-              <strong>LOADING TOPICS...</strong>
+              <strong>LOADING...</strong>
             </h2>
           )}
         </>

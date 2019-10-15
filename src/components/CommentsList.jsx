@@ -2,6 +2,7 @@ import React from 'react';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import CommentCard from './CommentCard';
+import CommentAdder from './CommentAdder';
 
 class CommentsList extends React.Component {
   state = {
@@ -12,11 +13,17 @@ class CommentsList extends React.Component {
     return (
       <>
         {!this.state.isLoading && (
-          <ul>
-            {this.state.comments.map(comment => {
-              return <CommentCard {...comment} key={comment.comment_id} />;
-            })}
-          </ul>
+          <>
+            <CommentAdder
+              loggedInUser={this.props.loggedInUser}
+              addComment={this.addComment}
+            />
+            <ul>
+              {this.state.comments.map(comment => {
+                return <CommentCard {...comment} key={comment.comment_id} />;
+              })}
+            </ul>
+          </>
         )}
         {this.state.isLoading && (
           <h2>
@@ -31,6 +38,13 @@ class CommentsList extends React.Component {
     this.fetchComments(this.props.article_id);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.comments.length !== this.state.comments.length) {
+      this.fetchComments(this.props.article_id);
+      this.setState({ isLoading: true });
+    }
+  }
+
   fetchComments = article_id => {
     api
       .getComments(article_id)
@@ -43,6 +57,18 @@ class CommentsList extends React.Component {
           replace: true
         });
       });
+  };
+
+  addComment = (username, body) => {
+    api.postComment(this.props.article_id, username, body).then(comment => {
+      this.setState(({ comments }) => {
+        const tempComments = [...comments];
+        tempComments.push(comment);
+        return {
+          comments: tempComments
+        };
+      });
+    });
   };
 }
 
