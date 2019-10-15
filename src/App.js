@@ -14,7 +14,7 @@ function App() {
         <Router primary={false}>
           <ArticlesList path="/articles" />
           <ArticlesList path="/articles/:topic" />
-          <ArticlesList path="/articles/:article_id" />
+          <ArticlesList path="/articles/:topic/:article_id" />
         </Router>
       </main>
       <Sidebar />
