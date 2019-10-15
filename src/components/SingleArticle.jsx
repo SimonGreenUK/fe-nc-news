@@ -3,6 +3,7 @@ import { Link } from '@reach/router';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
+import CommentsList from './CommentsList';
 
 class SingleArticle extends React.Component {
   state = {
@@ -10,7 +11,14 @@ class SingleArticle extends React.Component {
     isLoading: true
   };
   render() {
-    const { title, topic, author, created_at, body } = this.state.article;
+    const {
+      article_id,
+      title,
+      topic,
+      author,
+      created_at,
+      body
+    } = this.state.article;
     return (
       <>
         {!this.state.isLoading && (
@@ -22,6 +30,8 @@ class SingleArticle extends React.Component {
             <p>Author: {author}</p>
             <p>{utils.formatDate(created_at)}</p>
             <p>{body}</p>
+            <h4>Comments</h4>
+            <CommentsList article_id={article_id} />
           </div>
         )}
         {this.state.isLoading && (

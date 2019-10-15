@@ -10,7 +10,7 @@ const ArticleCard = props => {
     topic,
     created_at,
     votes,
-    comments_count
+    comment_count
   } = props.article;
   return (
     <li>
@@ -23,7 +23,7 @@ const ArticleCard = props => {
       <p>Author: {author}</p>
       <p>{utils.formatDate(created_at)}</p>
       <p>
-        Votes: {votes} | Comments: {comments_count ? comments_count : 0}
+        Votes: {votes} | Comments: {comment_count}
       </p>
     </li>
   );

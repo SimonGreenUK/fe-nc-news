@@ -5,13 +5,13 @@ export const capitaliseString = string => {
 
 export const formatDate = date => {
   const options = {
-    weekday: 'short',
+    // weekday: 'short',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
     hour: 'numeric',
-    minute: 'numeric',
-    timeZoneName: 'short'
+    minute: 'numeric'
+    // timeZoneName: 'short'
   };
   const formattedDate = new Date(date.slice()).toLocaleDateString(
     'en-GB',
