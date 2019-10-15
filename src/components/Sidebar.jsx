@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
+import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 
@@ -44,9 +45,17 @@ class Sidebar extends Component {
   }
 
   fetchTopics = () => {
-    api.getTopics().then(topics => {
-      this.setState({ topics, isLoading: false });
-    });
+    api
+      .getTopics()
+      .then(topics => {
+        this.setState({ topics, isLoading: false });
+      })
+      .catch(({ response: { data } }) => {
+        navigate(`/err`, {
+          state: { msg: data.msg },
+          replace: true
+        });
+      });
   };
 }
 

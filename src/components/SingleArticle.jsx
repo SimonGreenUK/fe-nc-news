@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 
@@ -37,9 +38,17 @@ class SingleArticle extends React.Component {
   }
 
   fetchSingleArticle = article_id => {
-    api.getSingleArticle(article_id).then(article => {
-      this.setState({ article, isLoading: false });
-    });
+    api
+      .getSingleArticle(article_id)
+      .then(article => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(({ response: { data } }) => {
+        navigate(`/err`, {
+          state: { msg: data.msg },
+          replace: true
+        });
+      });
   };
 }
 

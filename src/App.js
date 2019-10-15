@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import ArticlesList from './components/ArticlesList';
 import SingleArticle from './components/SingleArticle';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <ArticlesList path="/articles" />
           <ArticlesList path="/articles/:topic" />
           <SingleArticle path="/articles/:topic/:article_id" />
+          <ErrorPage default />
         </Router>
       </main>
       <Sidebar />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import ArticleCard from './ArticleCard';
 
@@ -38,9 +39,17 @@ class ArticlesList extends React.Component {
   }
 
   fetchArticles = topic => {
-    api.getArticles(topic).then(articles => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .getArticles(topic)
+      .then(articles => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(({ response: { data } }) => {
+        navigate(`/err`, {
+          state: { msg: data.msg },
+          replace: true
+        });
+      });
   };
 }
 
