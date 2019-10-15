@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
-import * as api from './utils/api';
-import * as utils from './utils/utils';
+import * as api from '../utils/api';
+import * as utils from '../utils/utils';
 
 class Sidebar extends Component {
   state = {

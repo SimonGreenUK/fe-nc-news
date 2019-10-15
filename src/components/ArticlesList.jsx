@@ -1,6 +1,6 @@
 import React from 'react';
-import * as api from './utils/api';
-import * as utils from './utils/utils';
+import * as api from '../utils/api';
+import * as utils from '../utils/utils';
 import ArticleCard from './ArticleCard';
 
 class ArticlesList extends React.Component {

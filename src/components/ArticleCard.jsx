@@ -3,6 +3,7 @@ import { Link } from '@reach/router';
 
 const ArticleCard = props => {
   const {
+    article_id,
     title,
     author,
     topic,
@@ -12,7 +13,9 @@ const ArticleCard = props => {
   } = props.article;
   return (
     <li>
-      <h3>{title}</h3>
+      <Link to={`/articles/${article_id}`}>
+        <h3>{title}</h3>
+      </Link>
       <Link to={`/articles/${topic.toLowerCase()}`}>
         <p>{topic}</p>
       </Link>
