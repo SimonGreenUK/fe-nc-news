@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import CommentCard from './CommentCard';
 
