@@ -27,7 +27,7 @@ class ArticlesList extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchArticles();
+    this.fetchArticles(this.props.topic);
   }
 
   componentDidUpdate(prevProps) {
