@@ -31,7 +31,7 @@ class ArticlesList extends React.Component {
     api
       .getArticles(topic)
       .then(articles => {
-        return articles.map(article => utils.topicFormatter(article));
+        return articles.map(article => utils.articleFormatter(article));
       })
       .then(articles => {
         this.setState({ articles });

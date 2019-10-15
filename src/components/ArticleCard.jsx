@@ -13,7 +13,7 @@ const ArticleCard = props => {
   return (
     <li>
       <h3>{title}</h3>
-      <Link to={`/articles/${topic}`}>
+      <Link to={`/articles/${topic.toLowerCase()}`}>
         <p>{topic}</p>
       </Link>
       Author: {author}
