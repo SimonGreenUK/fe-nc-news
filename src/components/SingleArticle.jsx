@@ -1,13 +1,46 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from '@reach/router';
+import * as api from '../utils/api';
+import * as utils from '../utils/utils';
 
-class SingleArticle extends Component {
+class SingleArticle extends React.Component {
+  state = {
+    article: {},
+    isLoading: true
+  };
   render() {
+    const { title, topic, author, created_at, body } = this.state.article;
     return (
-      <div>
-        <h3>Article Title</h3>
-      </div>
+      <>
+        {!this.state.isLoading && (
+          <div>
+            <h3>{title}</h3>
+            <Link to={`/articles/${topic}`}>
+              <p>{utils.capitaliseString(topic)}</p>
+            </Link>
+            <p>Author: {author}</p>
+            <p>{utils.formatDate(created_at)}</p>
+            <p>{body}</p>
+          </div>
+        )}
+        {this.state.isLoading && (
+          <h2>
+            <strong>LOADING ARTICLES...</strong>
+          </h2>
+        )}
+      </>
     );
   }
+
+  componentDidMount() {
+    this.fetchSingleArticle(this.props.article_id);
+  }
+
+  fetchSingleArticle = article_id => {
+    api.getSingleArticle(article_id).then(article => {
+      this.setState({ article, isLoading: false });
+    });
+  };
 }
 
 export default SingleArticle;

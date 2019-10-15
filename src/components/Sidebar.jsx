@@ -5,24 +5,36 @@ import * as utils from '../utils/utils';
 
 class Sidebar extends Component {
   state = {
-    topics: []
+    topics: [],
+    isLoading: true
   };
   render() {
     return (
       <aside className="sidebar">
         <h2>Topics</h2>
-        <li>
-          <Link to={'/articles'}>All</Link>
-        </li>
-        {this.state.topics.map(topic => {
-          return (
-            <li key={topic.slug}>
-              <Link to={`/articles/${topic.slug.toLowerCase()}`}>
-                {topic.slug}
-              </Link>
-            </li>
-          );
-        })}
+        <>
+          {!this.state.isLoading && (
+            <div>
+              <li>
+                <Link to={'/articles'}>All</Link>
+              </li>
+              {this.state.topics.map(topic => {
+                return (
+                  <li key={topic.slug}>
+                    <Link to={`/articles/${topic.slug.toLowerCase()}`}>
+                      {utils.capitaliseString(topic.slug)}
+                    </Link>
+                  </li>
+                );
+              })}
+            </div>
+          )}
+          {this.state.isLoading && (
+            <h2>
+              <strong>LOADING TOPICS...</strong>
+            </h2>
+          )}
+        </>
       </aside>
     );
   }
@@ -32,14 +44,9 @@ class Sidebar extends Component {
   }
 
   fetchTopics = () => {
-    api
-      .getTopics()
-      .then(topics => {
-        return topics.map(topic => utils.topicFormatter(topic));
-      })
-      .then(topics => {
-        this.setState({ topics });
-      });
+    api.getTopics().then(topics => {
+      this.setState({ topics, isLoading: false });
+    });
   };
 }
 

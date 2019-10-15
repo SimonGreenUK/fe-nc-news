@@ -14,6 +14,11 @@ exports.getArticles = async topic => {
   return data.articles;
 };
 
+exports.getSingleArticle = async article_id => {
+  const { data } = await instance.get(`/articles/${article_id}`);
+  return data.article;
+};
+
 exports.getTopics = async () => {
   const { data } = await instance.get('/topics');
 

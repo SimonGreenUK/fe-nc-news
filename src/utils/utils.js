@@ -1,10 +1,9 @@
-export const articleFormatter = ({ topic, created_at, ...args }) => {
-  const formattedTopic =
-    topic
-      .slice()
-      .charAt(0)
-      .toUpperCase() + topic.slice(1);
+export const capitaliseString = string => {
+  const capitalisedString = string.slice();
+  return capitalisedString.charAt(0).toUpperCase() + capitalisedString.slice(1);
+};
 
+export const formatDate = date => {
   const options = {
     weekday: 'short',
     year: 'numeric',
@@ -14,20 +13,10 @@ export const articleFormatter = ({ topic, created_at, ...args }) => {
     minute: 'numeric',
     timeZoneName: 'short'
   };
-  const formattedDate = new Date(created_at.slice()).toLocaleDateString(
+  const formattedDate = new Date(date.slice()).toLocaleDateString(
     'en-GB',
     options
   );
 
-  return { topic: formattedTopic, created_at: formattedDate, ...args };
-};
-
-export const topicFormatter = ({ slug, ...args }) => {
-  const formattedSlug =
-    slug
-      .slice()
-      .charAt(0)
-      .toUpperCase() + slug.slice(1);
-
-  return { slug: formattedSlug, ...args };
+  return formattedDate;
 };

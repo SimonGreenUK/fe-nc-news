@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import * as utils from '../utils/utils';
 
 const ArticleCard = props => {
   const {
@@ -17,12 +18,12 @@ const ArticleCard = props => {
         <h3>{title}</h3>
       </Link>
       <Link to={`/articles/${topic.toLowerCase()}`}>
-        <p>{topic}</p>
+        <p>{utils.capitaliseString(topic)}</p>
       </Link>
-      Author: {author}
-      <p>{created_at}</p>
+      <p>Author: {author}</p>
+      <p>{utils.formatDate(created_at)}</p>
       <p>
-        Votes: {votes} | Commets: {comments_count ? comments_count : 0}
+        Votes: {votes} | Comments: {comments_count ? comments_count : 0}
       </p>
     </li>
   );
