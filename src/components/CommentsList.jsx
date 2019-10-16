@@ -46,12 +46,12 @@ class CommentsList extends React.Component {
     this.fetchComments(this.props.article_id);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.comments.length !== this.state.comments.length) {
-      this.fetchComments(this.props.article_id);
-      this.setState({ isLoading: true });
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.comments.length !== this.state.comments.length) {
+  //     this.fetchComments(this.props.article_id);
+  //     this.setState({ isLoading: true });
+  //   }
+  // }
 
   fetchComments = article_id => {
     api
@@ -72,10 +72,8 @@ class CommentsList extends React.Component {
       .postComment(this.props.article_id, username, body)
       .then(comment => {
         this.setState(({ comments }) => {
-          const tempComments = [...comments];
-          tempComments.push(comment);
           return {
-            comments: tempComments
+            comments: [comment, ...comments]
           };
         });
       })

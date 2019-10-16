@@ -1,35 +1,28 @@
 import React from 'react';
 
-class SortSelect extends React.Component {
-  state = {
-    sortArticlesSelect: ''
+const SortSelect = props => {
+  const handleChange = e => {
+    const { value } = e.target;
+    props.updateArticleSort(value);
   };
-  render() {
-    return (
-      <div>
-        <form>
-          <label>
-            <select
-              onChange={this.handleChange}
-              name="sortArticlesSelect"
-              value={this.state.sortArticlesSelect}
-            >
-              <option value="created_at">Date</option>
-              <option value="votes">Votes</option>
-              <option value="comment_count">Comments</option>
-            </select>
-          </label>
-        </form>
-      </div>
-    );
-  }
 
-  handleChange = e => {
-    const { value, name } = e.target;
-    this.setState({ [name]: value }, () => {
-      this.props.updateArticleSort(this.state.sortArticlesSelect);
-    });
-  };
-}
+  return (
+    <div>
+      <form>
+        <label>
+          <select
+            onChange={handleChange}
+            name="sortArticlesSelect"
+            value={props.sort_by}
+          >
+            <option value="created_at">Date</option>
+            <option value="votes">Votes</option>
+            <option value="comment_count">Comments</option>
+          </select>
+        </label>
+      </form>
+    </div>
+  );
+};
 
 export default SortSelect;

@@ -16,6 +16,7 @@ class CommentAdder extends React.Component {
               name="commentBody"
               value={this.state.commentBody}
               placeholder="Add a comment..."
+              required
             />
           </label>
           <button>Comment</button>
@@ -32,6 +33,7 @@ class CommentAdder extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.addComment(this.props.loggedInUser, this.state.commentBody);
+    this.setState({ commentBody: '' });
   };
 }
 

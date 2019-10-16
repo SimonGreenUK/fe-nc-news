@@ -4,6 +4,7 @@ import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 import CommentsList from './CommentsList';
+import Voter from './Voter';
 
 class SingleArticle extends React.Component {
   state = {
@@ -32,6 +33,7 @@ class SingleArticle extends React.Component {
             <p>{utils.formatDate(created_at)}</p>
             <p>{body}</p>
             <h4>{votes} votes</h4>
+            <Voter />
             <CommentsList
               article_id={article_id}
               loggedInUser={this.props.loggedInUser}

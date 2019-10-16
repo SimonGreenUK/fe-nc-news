@@ -13,9 +13,12 @@ class ArticlesList extends React.Component {
   render() {
     return (
       <>
+        <SortSelect
+          updateArticleSort={this.updateArticleSort}
+          sort_by={this.state.sort_by}
+        />
         {!this.state.isLoading && (
           <>
-            <SortSelect updateArticleSort={this.updateArticleSort} />
             <ul>
               {this.state.articles.map(article => {
                 return (
@@ -44,7 +47,7 @@ class ArticlesList extends React.Component {
       this.setState({ isLoading: true });
     } else if (prevState.sort_by !== this.state.sort_by) {
       this.fetchArticles(this.props.topic, this.state.sort_by);
-      // this.setState({ isLoading: true });
+      this.setState({ isLoading: true });
     }
   }
 
