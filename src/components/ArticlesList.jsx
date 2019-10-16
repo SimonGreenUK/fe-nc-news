@@ -3,6 +3,12 @@ import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import ArticleCard from './ArticleCard';
 import SortSelect from './SortSelect';
+import styled from 'styled-components';
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
 
 class ArticlesList extends React.Component {
   state = {
@@ -19,13 +25,13 @@ class ArticlesList extends React.Component {
         />
         {!this.state.isLoading && (
           <>
-            <ul>
+            <List>
               {this.state.articles.map(article => {
                 return (
                   <ArticleCard article={article} key={article.article_id} />
                 );
               })}
-            </ul>
+            </List>
           </>
         )}
         {this.state.isLoading && (

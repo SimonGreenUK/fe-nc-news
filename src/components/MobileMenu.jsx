@@ -5,7 +5,7 @@ import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 import styled from 'styled-components';
 
-const MobileMenu = styled.div`
+const MobileMenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,14 +19,14 @@ const MobileMenu = styled.div`
   text-align: left;
 `;
 
-class MobileNav extends React.Component {
+class MobileMenu extends React.Component {
   state = {
     topics: [],
     isLoading: true
   };
   render() {
     return (
-      <MobileMenu
+      <MobileMenuWrapper
         className={
           this.props.mobileNavOpen ? 'mobile-nav-visible' : 'mobile-nav-hidden'
         }
@@ -54,7 +54,7 @@ class MobileNav extends React.Component {
             </h2>
           )}
         </>
-      </MobileMenu>
+      </MobileMenuWrapper>
     );
   }
 
@@ -77,4 +77,4 @@ class MobileNav extends React.Component {
   };
 }
 
-export default MobileNav;
+export default MobileMenu;

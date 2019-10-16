@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import no_img from '../assets/images/no_img.png';
-import DesktopNav from './DesktopNav';
+import DesktopMenu from './DesktopMenu';
 import HamburgerIcon from './HamburgerIcon';
 
 const Header = props => {
@@ -19,7 +19,7 @@ const Header = props => {
       <Link to={`/change-user`}>Change User</Link>
       <h1>NC NEWS</h1>
       <nav className="header-nav">
-        <DesktopNav />
+        <DesktopMenu />
         <HamburgerIcon
           toggleMobileNav={props.toggleMobileNav}
           className="align-burger"

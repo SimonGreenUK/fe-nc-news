@@ -16,7 +16,7 @@ body {
 
 .App {
   display: grid;
-  grid-template-rows: 200px 1fr 100px;
+  grid-template-rows: 150px 1fr 100px;
   grid-template-areas:
     'header'
     'main'
@@ -28,10 +28,18 @@ body {
   border: 1px solid red;
 }
 
-.main {
-  grid-area: main;
+.main-wrapper {
+  display: grid;
+  grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 950px) minmax(
+      1.2rem,
+      1fr
+    );
   min-height: 100vh;
-  border: 1px solid green;
+  grid-area: main;
+}
+
+.main-content {
+  grid-column: 2;
 }
 
 .header-nav {

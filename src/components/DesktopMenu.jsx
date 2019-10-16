@@ -4,7 +4,7 @@ import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 
-class DesktopNav extends React.Component {
+class DesktopMenu extends React.Component {
   state = {
     topics: [],
     isLoading: true
@@ -56,4 +56,4 @@ class DesktopNav extends React.Component {
   };
 }
 
-export default DesktopNav;
+export default DesktopMenu;

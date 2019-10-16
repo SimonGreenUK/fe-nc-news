@@ -3,6 +3,12 @@ import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import CommentCard from './CommentCard';
 import CommentAdder from './CommentAdder';
+import styled from 'styled-components';
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
 
 class CommentsList extends React.Component {
   state = {
@@ -19,7 +25,7 @@ class CommentsList extends React.Component {
               addComment={this.addComment}
             />
             <h4>Comments</h4>
-            <ul>
+            <List>
               {this.state.comments.map(comment => {
                 return (
                   <CommentCard
@@ -30,7 +36,7 @@ class CommentsList extends React.Component {
                   />
                 );
               })}
-            </ul>
+            </List>
           </>
         )}
         {this.state.isLoading && (

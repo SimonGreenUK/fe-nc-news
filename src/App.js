@@ -2,12 +2,11 @@ import React from 'react';
 import { Router } from '@reach/router';
 import './styles/layout.css';
 import Header from './components/Header';
-// import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import ArticlesList from './components/ArticlesList';
 import SingleArticle from './components/SingleArticle';
 import ChangeUser from './components/ChangeUser';
-import MobileNav from './components/MobileNav';
+import MobileMenu from './components/MobileMenu';
 import ErrorPage from './components/ErrorPage';
 
 class App extends React.Component {
@@ -27,23 +26,25 @@ class App extends React.Component {
           loggedInUser={this.state.loggedInUser}
           toggleMobileNav={this.toggleMobileNav}
         />
-        <main className="main">
-          <Router primary={false}>
-            <ArticlesList path="/articles" />
-            <ArticlesList path="/articles/:topic" />
-            <SingleArticle
-              path="/articles/:topic/:article_id"
-              loggedInUser={this.state.loggedInUser}
-            />
-            <ChangeUser
-              path="/change-user"
-              loggedInUser={this.state.loggedInUser}
-              updateLoggedInUser={this.updateLoggedInUser}
-            />
-            <ErrorPage default />
-          </Router>
+        <main className="main-wrapper">
+          <div className="main-content">
+            <Router primary={false}>
+              <ArticlesList path="/articles" />
+              <ArticlesList path="/articles/:topic" />
+              <SingleArticle
+                path="/articles/:topic/:article_id"
+                loggedInUser={this.state.loggedInUser}
+              />
+              <ChangeUser
+                path="/change-user"
+                loggedInUser={this.state.loggedInUser}
+                updateLoggedInUser={this.updateLoggedInUser}
+              />
+              <ErrorPage default />
+            </Router>
+          </div>
         </main>
-        <MobileNav mobileNavOpen={this.state.mobileNavOpen} />
+        <MobileMenu mobileNavOpen={this.state.mobileNavOpen} />
         {/* <Sidebar
           loggedInUser={this.state.loggedInUser}
           updateLoggedInUser={this.updateLoggedInUser}
