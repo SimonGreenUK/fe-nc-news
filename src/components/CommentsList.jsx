@@ -18,6 +18,7 @@ class CommentsList extends React.Component {
               loggedInUser={this.props.loggedInUser}
               addComment={this.addComment}
             />
+            <h4>Comments</h4>
             <ul>
               {this.state.comments.map(comment => {
                 return (
@@ -34,7 +35,7 @@ class CommentsList extends React.Component {
         )}
         {this.state.isLoading && (
           <h2>
-            <strong>LOADING COMMENTS...</strong>
+            <strong>LOADING...</strong>
           </h2>
         )}
       </>
@@ -88,8 +89,7 @@ class CommentsList extends React.Component {
 
   deleteComment = comment_id => {
     api.deleteComment(comment_id).then(() => {
-      console.log('comment deleted!');
-      // this.setState();
+      this.fetchComments(this.props.article_id);
     });
   };
 }

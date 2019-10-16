@@ -17,7 +17,7 @@ class SingleArticle extends React.Component {
       topic,
       author,
       created_at,
-      comment_count,
+      votes,
       body
     } = this.state.article;
     return (
@@ -31,7 +31,7 @@ class SingleArticle extends React.Component {
             <p>Author: {author}</p>
             <p>{utils.formatDate(created_at)}</p>
             <p>{body}</p>
-            <h4>{comment_count} comments</h4>
+            <h4>{votes} votes</h4>
             <CommentsList
               article_id={article_id}
               loggedInUser={this.props.loggedInUser}

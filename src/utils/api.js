@@ -40,7 +40,6 @@ export const postComment = async (article_id, username, body) => {
 };
 
 export const deleteComment = async comment_id => {
-  // console.log(comment_id);
   const { data } = await instance.delete(`/comments/${comment_id}`);
   return data;
 };
