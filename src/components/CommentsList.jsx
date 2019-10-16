@@ -20,7 +20,14 @@ class CommentsList extends React.Component {
             />
             <ul>
               {this.state.comments.map(comment => {
-                return <CommentCard {...comment} key={comment.comment_id} />;
+                return (
+                  <CommentCard
+                    {...comment}
+                    key={comment.comment_id}
+                    loggedInUser={this.props.loggedInUser}
+                    deleteComment={this.deleteComment}
+                  />
+                );
               })}
             </ul>
           </>
@@ -60,14 +67,29 @@ class CommentsList extends React.Component {
   };
 
   addComment = (username, body) => {
-    api.postComment(this.props.article_id, username, body).then(comment => {
-      this.setState(({ comments }) => {
-        const tempComments = [...comments];
-        tempComments.push(comment);
-        return {
-          comments: tempComments
-        };
+    api
+      .postComment(this.props.article_id, username, body)
+      .then(comment => {
+        this.setState(({ comments }) => {
+          const tempComments = [...comments];
+          tempComments.push(comment);
+          return {
+            comments: tempComments
+          };
+        });
+      })
+      .catch(({ response: { data } }) => {
+        navigate(`/err`, {
+          state: { msg: data.msg },
+          replace: true
+        });
       });
+  };
+
+  deleteComment = comment_id => {
+    api.deleteComment(comment_id).then(() => {
+      console.log('comment deleted!');
+      // this.setState();
     });
   };
 }
