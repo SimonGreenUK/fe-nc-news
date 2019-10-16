@@ -1,5 +1,6 @@
 import React from 'react';
 import * as api from '../utils/api';
+import no_img from '../assets/images/no_img.png';
 
 class UserLogin extends React.Component {
   state = {
@@ -8,12 +9,21 @@ class UserLogin extends React.Component {
   render() {
     return (
       <div>
-        {/* <p>user-image</p> */}
-        <h5>Username: {this.props.loggedInUser}</h5>
+        <img
+          src={this.props.loggedInUser.avatar_url}
+          onError={e => {
+            e.target.onerror = null;
+            e.target.src = no_img;
+          }}
+          alt="user avatar"
+        />
+        <h5>Username: {this.props.loggedInUser.username}</h5>
         <form>
           <label>
-            <select onChange={this.handleChange}>
-              <option value="">Select user</option>
+            <select onChange={this.handleChange} defaultValue="">
+              <option value="" disabled>
+                Select user
+              </option>
               {this.state.users.map(user => {
                 return (
                   <option value={user.username} key={user.username}>
@@ -39,8 +49,10 @@ class UserLogin extends React.Component {
   };
 
   handleChange = e => {
-    this.props.updateLoggedInUser(e.target.value);
-    console.log(e.target.value);
+    const user = this.state.users.find(user => {
+      return user.username === e.target.value;
+    });
+    this.props.updateLoggedInUser(user);
   };
 }
 

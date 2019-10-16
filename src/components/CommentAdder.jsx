@@ -7,7 +7,7 @@ class CommentAdder extends React.Component {
   render() {
     return (
       <>
-        <h6>Current user: {this.props.loggedInUser}</h6>
+        <h6>Current user: {this.props.loggedInUser.username}</h6>
         <form onSubmit={this.handleSubmit}>
           <label>
             <input
@@ -32,7 +32,10 @@ class CommentAdder extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.addComment(this.props.loggedInUser, this.state.commentBody);
+    this.props.addComment(
+      this.props.loggedInUser.username,
+      this.state.commentBody
+    );
     this.setState({ commentBody: '' });
   };
 }

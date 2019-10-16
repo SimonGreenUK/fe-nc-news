@@ -16,7 +16,7 @@ const CommentCard = props => {
       <p>{body}</p>
       <p>Comment votes: {votes}</p>
       <Voter votes={votes} type="comments" id={comment_id} />
-      {loggedInUser === author && (
+      {loggedInUser.username === author && (
         <button onClick={handleClick} name={comment_id}>
           Delete comment
         </button>

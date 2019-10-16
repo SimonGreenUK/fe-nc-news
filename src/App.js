@@ -10,7 +10,12 @@ import ErrorPage from './components/ErrorPage';
 
 class App extends React.Component {
   state = {
-    loggedInUser: 'jessjelly'
+    loggedInUser: {
+      username: 'jessjelly',
+      avatar_url:
+        'https://s-media-cache-ak0.pinimg.com/564x/39/62/ec/3962eca164e60cf46f979c1f57d4078b.jpg',
+      name: 'Jess Jelly'
+    }
   };
   render() {
     return (
@@ -36,8 +41,8 @@ class App extends React.Component {
     );
   }
 
-  updateLoggedInUser = username => {
-    this.setState({ loggedInUser: username });
+  updateLoggedInUser = user => {
+    this.setState({ loggedInUser: user });
   };
 }
 
