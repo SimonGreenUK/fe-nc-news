@@ -9,7 +9,7 @@ body {
 .App {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 100px 1fr 100px;
+  grid-template-rows: 200px 1fr 100px;
   grid-template-areas:
     'header header'
     'main sidebar'
@@ -26,6 +26,21 @@ body {
   min-height: 100vh;
   border: 1px solid green;
 }
+
+.desktop-nav {
+  border-top: 1px solid orange;
+}
+
+.desktop-nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-nav li {
+  padding: 5px;
+  list-style: none;
+}
+
 .sidebar {
   grid-area: sidebar;
   border: 1px solid green;
@@ -34,4 +49,10 @@ body {
 .footer {
   grid-area: footer;
   border: 1px solid blue;
+}
+
+@media all and (max-width: 750px) {
+  .desktop-nav {
+    display: none;
+  }
 }

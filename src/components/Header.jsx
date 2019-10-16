@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import no_img from '../assets/images/no_img.png';
+import DesktopNav from './DesktopNav';
+import HamburgerIcon from './HamburgerIcon';
 
 const Header = props => {
   return (
@@ -16,6 +18,8 @@ const Header = props => {
       <span>USER IMG HERE - {props.loggedInUser.username}</span>
       <Link to={`/change-user`}>Change User</Link>
       <h1>NC NEWS</h1>
+      <HamburgerIcon />
+      <DesktopNav />
     </header>
   );
 };
