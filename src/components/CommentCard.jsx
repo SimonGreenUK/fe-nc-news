@@ -1,5 +1,6 @@
 import React from 'react';
 import * as utils from '../utils/utils';
+import Voter from './Voter';
 
 const CommentCard = props => {
   const handleClick = e => {
@@ -14,6 +15,7 @@ const CommentCard = props => {
       </p>
       <p>{body}</p>
       <p>Comment votes: {votes}</p>
+      <Voter votes={votes} type="comments" id={comment_id} />
       {loggedInUser === author && (
         <button onClick={handleClick} name={comment_id}>
           Delete comment

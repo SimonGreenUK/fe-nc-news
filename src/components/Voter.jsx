@@ -1,4 +1,5 @@
 import React from 'react';
+import * as api from '../utils/api';
 
 class Voter extends React.Component {
   state = {
@@ -7,6 +8,7 @@ class Voter extends React.Component {
   render() {
     return (
       <div>
+        <p>{this.state.optimisticVotes} votes</p>
         <button onClick={this.handleClick} name={1}>
           Up vote
         </button>
@@ -16,6 +18,20 @@ class Voter extends React.Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    this.setState({ optimisticVotes: this.props.votes });
+  }
+
+  handleClick = e => {
+    const { name } = e.target;
+    this.setState(currentState => {
+      return {
+        optimisticVotes: currentState.optimisticVotes + Number(name)
+      };
+    });
+    api.patchVote(this.props.type, this.props.id, name);
+  };
 }
 
 export default Voter;

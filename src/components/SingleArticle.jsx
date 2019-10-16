@@ -32,8 +32,7 @@ class SingleArticle extends React.Component {
             <p>Author: {author}</p>
             <p>{utils.formatDate(created_at)}</p>
             <p>{body}</p>
-            <h4>{votes} votes</h4>
-            <Voter />
+            <Voter votes={votes} type="articles" id={article_id} />
             <CommentsList
               article_id={article_id}
               loggedInUser={this.props.loggedInUser}

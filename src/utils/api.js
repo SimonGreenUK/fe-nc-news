@@ -43,3 +43,10 @@ export const deleteComment = async comment_id => {
   const { data } = await instance.delete(`/comments/${comment_id}`);
   return data;
 };
+
+export const patchVote = async (type, id, inc_votes) => {
+  const { data } = await instance.patch(`/${type}/${id}`, {
+    inc_votes: `${inc_votes}`
+  });
+  return data;
+};
