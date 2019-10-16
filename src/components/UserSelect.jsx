@@ -2,13 +2,14 @@ import React from 'react';
 import * as api from '../utils/api';
 import no_img from '../assets/images/no_img.png';
 
-class UserLogin extends React.Component {
+class UserSelect extends React.Component {
   state = {
     users: []
   };
   render() {
     return (
       <div>
+        <p>Current user: {this.props.loggedInUser.username}</p>
         <img
           src={this.props.loggedInUser.avatar_url}
           onError={e => {
@@ -17,13 +18,13 @@ class UserLogin extends React.Component {
           }}
           alt="user avatar"
         />
-        <h5>Username: {this.props.loggedInUser.username}</h5>
+        <p>Choose a different user</p>
         <form>
           <label>
-            <select onChange={this.handleChange} defaultValue="">
-              <option value="" disabled>
-                Select user
-              </option>
+            <select
+              onChange={this.handleChange}
+              value={this.props.loggedInUser.username}
+            >
               {this.state.users.map(user => {
                 return (
                   <option value={user.username} key={user.username}>
@@ -56,4 +57,4 @@ class UserLogin extends React.Component {
   };
 }
 
-export default UserLogin;
+export default UserSelect;

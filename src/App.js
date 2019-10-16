@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import ArticlesList from './components/ArticlesList';
 import SingleArticle from './components/SingleArticle';
+import ChangeUser from './components/ChangeUser';
 import ErrorPage from './components/ErrorPage';
 
 class App extends React.Component {
@@ -20,7 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header loggedInUser={this.state.loggedInUser} />
         <main className="main">
           <Router primary={false}>
             <ArticlesList path="/articles" />
@@ -28,6 +29,11 @@ class App extends React.Component {
             <SingleArticle
               path="/articles/:topic/:article_id"
               loggedInUser={this.state.loggedInUser}
+            />
+            <ChangeUser
+              path="/change-user"
+              loggedInUser={this.state.loggedInUser}
+              updateLoggedInUser={this.updateLoggedInUser}
             />
             <ErrorPage default />
           </Router>
