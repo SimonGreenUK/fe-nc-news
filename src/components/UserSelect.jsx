@@ -1,6 +1,7 @@
 import React from 'react';
 import * as api from '../utils/api';
 import no_img from '../assets/images/no_img.png';
+import { navigate } from '@reach/router';
 
 class UserSelect extends React.Component {
   state = {
@@ -44,9 +45,17 @@ class UserSelect extends React.Component {
   }
 
   fetchUsers = () => {
-    api.getAllUsers().then(users => {
-      this.setState({ users });
-    });
+    api
+      .getAllUsers()
+      .then(users => {
+        this.setState({ users });
+      })
+      .catch(({ response: { data } }) => {
+        navigate(`/err`, {
+          state: { msg: data.msg },
+          replace: true
+        });
+      });
   };
 
   handleChange = e => {
