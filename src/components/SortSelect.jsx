@@ -10,11 +10,7 @@ const SortSelect = props => {
     <div>
       <form>
         <label>
-          <select
-            onChange={handleChange}
-            name="sortArticlesSelect"
-            value={props.sort_by}
-          >
+          <select onChange={handleChange} value={props.sort_by}>
             <option value="created_at">Date</option>
             <option value="votes">Votes</option>
             <option value="comment_count">Comments</option>

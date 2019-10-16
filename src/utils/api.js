@@ -50,3 +50,8 @@ export const patchVote = async (type, id, inc_votes) => {
   });
   return data;
 };
+
+export const getAllUsers = async () => {
+  const { data } = await instance.get(`/users`);
+  return data.users;
+};

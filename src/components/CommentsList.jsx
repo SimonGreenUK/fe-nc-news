@@ -46,13 +46,6 @@ class CommentsList extends React.Component {
     this.fetchComments(this.props.article_id);
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.comments.length !== this.state.comments.length) {
-  //     this.fetchComments(this.props.article_id);
-  //     this.setState({ isLoading: true });
-  //   }
-  // }
-
   fetchComments = article_id => {
     api
       .getComments(article_id)

@@ -27,11 +27,18 @@ class App extends React.Component {
             <ErrorPage default />
           </Router>
         </main>
-        <Sidebar />
+        <Sidebar
+          loggedInUser={this.state.loggedInUser}
+          updateLoggedInUser={this.updateLoggedInUser}
+        />
         <Footer />
       </div>
     );
   }
+
+  updateLoggedInUser = username => {
+    this.setState({ loggedInUser: username });
+  };
 }
 
 export default App;
