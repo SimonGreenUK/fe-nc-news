@@ -11,7 +11,7 @@ class DesktopNav extends React.Component {
   };
   render() {
     return (
-      <nav className="desktop-nav">
+      <div className="desktop-menu">
         {!this.state.isLoading && (
           <ul>
             <li>
@@ -33,7 +33,7 @@ class DesktopNav extends React.Component {
             <strong>LOADING...</strong>
           </h2>
         )}
-      </nav>
+      </div>
     );
   }
 

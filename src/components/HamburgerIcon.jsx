@@ -5,6 +5,7 @@ const Burger = styled.div`
   color: black;
   display: none;
   cursor: pointer;
+  z-index: 1;
 
   @media all and (max-width: 750px) {
     display: block;
@@ -19,10 +20,13 @@ const BurgerBar = styled.div`
   transition: 0.3s;
 `;
 
-const HamburgerIcon = () => {
+const HamburgerIcon = props => {
+  const handleClick = () => {
+    props.toggleMobileNav();
+  };
   return (
     <>
-      <Burger>
+      <Burger onClick={handleClick}>
         <BurgerBar />
         <BurgerBar />
         <BurgerBar />

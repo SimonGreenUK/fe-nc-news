@@ -18,8 +18,13 @@ const Header = props => {
       <span>USER IMG HERE - {props.loggedInUser.username}</span>
       <Link to={`/change-user`}>Change User</Link>
       <h1>NC NEWS</h1>
-      <HamburgerIcon />
-      <DesktopNav />
+      <nav className="header-nav">
+        <DesktopNav />
+        <HamburgerIcon
+          toggleMobileNav={props.toggleMobileNav}
+          className="align-burger"
+        />
+      </nav>
     </header>
   );
 };

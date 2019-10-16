@@ -6,14 +6,21 @@ body {
   margin: 0;
 }
 
+.mobile-nav-visible {
+  width: 100vw;
+}
+
+.mobile-nav-hidden {
+  width: 0;
+}
+
 .App {
   display: grid;
-  grid-template-columns: 3fr 1fr;
   grid-template-rows: 200px 1fr 100px;
   grid-template-areas:
-    'header header'
-    'main sidebar'
-    'footer footer';
+    'header'
+    'main'
+    'footer';
 }
 
 .header {
@@ -27,16 +34,18 @@ body {
   border: 1px solid green;
 }
 
-.desktop-nav {
+.header-nav {
   border-top: 1px solid orange;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.desktop-nav ul {
+.desktop-menu ul {
   display: flex;
   align-items: center;
 }
 
-.desktop-nav li {
+.desktop-menu li {
   padding: 5px;
   list-style: none;
 }
@@ -52,7 +61,7 @@ body {
 }
 
 @media all and (max-width: 750px) {
-  .desktop-nav {
+  .desktop-menu {
     display: none;
   }
 }
