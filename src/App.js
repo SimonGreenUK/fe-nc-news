@@ -26,7 +26,7 @@ class App extends React.Component {
           loggedInUser={this.state.loggedInUser}
           toggleMobileMenu={this.toggleMobileMenu}
         />
-        <main className="main-wrapper">
+        <main className="main-grid-wrapper">
           <div className="main-content">
             <Router primary={false}>
               <ArticlesList path="/articles" />

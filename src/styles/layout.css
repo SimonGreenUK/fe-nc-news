@@ -16,7 +16,7 @@ body {
 
 .App {
   display: grid;
-  grid-template-rows: 150px 1fr 100px;
+  grid-template-rows: auto 1fr 100px;
   grid-template-areas:
     'header'
     'main'
@@ -25,10 +25,34 @@ body {
 
 .header {
   grid-area: header;
-  border: 1px solid red;
 }
 
-.main-wrapper {
+.header-current-user-info {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 1rem 10px 1rem;
+  background-color: black;
+  color: white;
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+.header-nav {
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem 0 1rem;
+  background-color: black;
+  color: white;
+}
+
+.main-grid-wrapper {
   display: grid;
   grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 950px) minmax(
       1.2rem,
@@ -42,15 +66,10 @@ body {
   grid-column: 2;
 }
 
-.header-nav {
-  border-top: 1px solid orange;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .desktop-menu ul {
   display: flex;
   align-items: center;
+  padding: 0;
 }
 
 .desktop-menu li {
@@ -65,7 +84,11 @@ body {
 
 .footer {
   grid-area: footer;
-  border: 1px solid blue;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
 }
 
 @media all and (max-width: 750px) {

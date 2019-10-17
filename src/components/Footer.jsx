@@ -3,7 +3,16 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>Footer content</p>
+      <p>
+        Copyright{' '}
+        <a
+          href="https://www.simongreen.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Simon Green
+        </a>
+      </p>
     </footer>
   );
 };

@@ -7,7 +7,8 @@ import HamburgerIcon from './HamburgerIcon';
 const Header = props => {
   return (
     <header className="header">
-      {/* <img
+      <div className="header-current-user-info">
+        {/* <img
         src={props.loggedInUser.avatar_url}
         onError={e => {
           e.target.onerror = null;
@@ -15,15 +16,15 @@ const Header = props => {
         }}
         alt="user avatar"
       /> */}
-      <span>USER IMG HERE - {props.loggedInUser.username}</span>
-      <Link to={`/change-user`}>Change User</Link>
-      <h1>NC NEWS</h1>
+        <span>USER IMG HERE - {props.loggedInUser.username}</span>
+        <Link to={`/change-user`}>Change User</Link>
+      </div>
+      <div className="header-title">
+        <h1>NC NEWS</h1>
+      </div>
       <nav className="header-nav">
         <DesktopMenu />
-        <HamburgerIcon
-          toggleMobileMenu={props.toggleMobileMenu}
-          className="align-burger"
-        />
+        <HamburgerIcon toggleMobileMenu={props.toggleMobileMenu} />
       </nav>
     </header>
   );
