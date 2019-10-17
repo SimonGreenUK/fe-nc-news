@@ -8,19 +8,23 @@ class Voter extends React.Component {
   render() {
     return (
       <div>
-        <p>{this.state.optimisticVotes} votes</p>
-        <button onClick={this.handleClick} name={1}>
+        <p>{this.props.votes + this.state.optimisticVotes} votes</p>
+        <button
+          onClick={this.handleClick}
+          name={1}
+          disabled={this.state.optimisticVotes === 1}
+        >
           Up vote
         </button>
-        <button onClick={this.handleClick} name={-1}>
+        <button
+          onClick={this.handleClick}
+          name={-1}
+          disabled={this.state.optimisticVotes === -1}
+        >
           Down vote
         </button>
       </div>
     );
-  }
-
-  componentDidMount() {
-    this.setState({ optimisticVotes: this.props.votes });
   }
 
   handleClick = e => {
