@@ -1,6 +1,7 @@
 import React from 'react';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
+import * as utils from '../utils/utils';
 import ArticleCard from './ArticleCard';
 import SortSelect from './SortSelect';
 import styled from 'styled-components';
@@ -19,6 +20,9 @@ class ArticlesList extends React.Component {
   render() {
     return (
       <>
+        <h2>
+          {this.props.topic ? utils.capitaliseString(this.props.topic) : 'All'}
+        </h2>
         <SortSelect
           updateArticleSort={this.updateArticleSort}
           sort_by={this.state.sort_by}

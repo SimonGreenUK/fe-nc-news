@@ -20,7 +20,7 @@ const HeaderStyled = styled.header`
 `;
 
 const UserImg = styled.img`
-  max-width: 50px;
+  max-width: 40px;
   height: auto;
 `;
 

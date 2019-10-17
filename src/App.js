@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router } from '@reach/router';
 import './styles/layout.css';
+import './styles/fonts.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ArticlesList from './components/ArticlesList';
