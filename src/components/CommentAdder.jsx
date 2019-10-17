@@ -2,12 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import user_default from '../assets/images/user_default.jpg';
 import Button from './Button';
+import TextInput from './TextInput';
 
 const CommentAdderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   min-height: 120px;
+`;
+
+const Form = styled.form`
+  display: flex;
 `;
 
 const UserImg = styled.img`
@@ -48,10 +53,10 @@ class CommentAdder extends React.Component {
           </UserInfo>
         </UserInfoWrapper>
 
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <label>
-            <input
-              type="text-area"
+            <TextInput
+              type="text"
               onChange={this.handleChange}
               name="commentBody"
               value={this.state.commentBody}
@@ -60,7 +65,7 @@ class CommentAdder extends React.Component {
             />
           </label>
           <Button>Comment</Button>
-        </form>
+        </Form>
       </CommentAdderWrapper>
     );
   }
