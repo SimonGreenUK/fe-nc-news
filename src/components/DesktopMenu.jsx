@@ -10,6 +10,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
   padding: 12px;
   border-radius: 5px;
+  transition: all 0.3s ease;
   :hover {
     color: lightgray;
     background-color: rgba(255, 255, 255, 0.2);

@@ -10,6 +10,7 @@ const Select = styled.select`
   height: 32.5px;
   cursor: pointer;
   min-width: 100px;
+  transition: all 0.3s ease;
   :hover {
     border: 2px solid gray;
   }

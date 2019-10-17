@@ -9,6 +9,7 @@ const HeaderStyled = styled.header`
   grid-area: header;
   background-color: black;
   color: white;
+  min-height: 205px;
 
   a {
     text-decoration: none;
