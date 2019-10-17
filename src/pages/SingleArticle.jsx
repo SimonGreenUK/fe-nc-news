@@ -46,7 +46,7 @@ class SingleArticle extends React.Component {
         {!this.state.isLoading && (
           <div>
             <SingleArticleWrapper>
-              <h3>{title}</h3>
+              <h2>{title}</h2>
               <SingleArticlePostInfo>
                 <SingleArticleLink to={`/articles/${topic}`}>
                   <span>{utils.capitaliseString(topic)}</span>
