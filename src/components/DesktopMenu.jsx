@@ -17,6 +17,17 @@ const NavLink = styled(Link)`
   }
 `;
 
+const DesktopMenuList = styled.ul`
+  display: flex;
+  align-items: center;
+  padding: 0;
+`;
+
+const DesktopMenuListItem = styled.li`
+  padding: 5px;
+  list-style: none;
+`;
+
 class DesktopMenu extends React.Component {
   state = {
     topics: [],
@@ -25,20 +36,20 @@ class DesktopMenu extends React.Component {
   render() {
     return (
       <div className="desktop-menu">
-        <ul>
-          <li>
+        <DesktopMenuList>
+          <DesktopMenuListItem>
             <NavLink to={'/articles'}>All</NavLink>
-          </li>
+          </DesktopMenuListItem>
           {this.state.topics.map(topic => {
             return (
-              <li key={topic.slug}>
+              <DesktopMenuListItem key={topic.slug}>
                 <NavLink to={`/articles/${topic.slug.toLowerCase()}`}>
                   {utils.capitaliseString(topic.slug)}
                 </NavLink>
-              </li>
+              </DesktopMenuListItem>
             );
           })}
-        </ul>
+        </DesktopMenuList>
       </div>
     );
   }

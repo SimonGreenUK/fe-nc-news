@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <StyledFooter className="footer">
       <p>
-        Copyright{' '}
+        Created by{' '}
         <a
           href="https://www.simongreen.dev/"
           target="_blank"
