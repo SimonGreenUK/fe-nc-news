@@ -1,15 +1,24 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const Burger = styled.div`
-  color: white;
-  display: none;
+const BurgerButton = styled.button`
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space - around;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  z-index: 1;
-  margin-left: auto;
+  padding: 0;
+  z-index: 10;
 
   @media all and (max-width: 750px) {
-    display: block;
+    visibility: visible;
   }
 `;
 
@@ -27,11 +36,11 @@ const HamburgerIcon = props => {
   };
   return (
     <>
-      <Burger onClick={handleClick}>
+      <BurgerButton onClick={handleClick}>
         <BurgerBar />
         <BurgerBar />
         <BurgerBar />
-      </Burger>
+      </BurgerButton>
     </>
   );
 };

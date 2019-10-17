@@ -15,8 +15,8 @@ const CardItem = styled.li`
   }
 `;
 
-const Card = () => {
-  return <CardItem />;
+const Card = props => {
+  return <CardItem {...props}></CardItem>;
 };
 
 export default Card;

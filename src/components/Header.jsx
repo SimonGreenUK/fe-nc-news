@@ -5,6 +5,20 @@ import DesktopMenu from './DesktopMenu';
 import HamburgerIcon from './HamburgerIcon';
 import styled from 'styled-components';
 
+const HeaderStyled = styled.header`
+  background-color: black;
+  color: white;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
 const UserImg = styled.img`
   max-width: 50px;
   height: auto;
@@ -12,7 +26,7 @@ const UserImg = styled.img`
 
 const Header = props => {
   return (
-    <header className="header">
+    <HeaderStyled className="header">
       <div className="header-current-user-info">
         <div className="header-current-user-info-wrapper">
           <Link to={`/change-user`}>Change User</Link>
@@ -34,7 +48,7 @@ const Header = props => {
         <DesktopMenu />
         <HamburgerIcon toggleMobileMenu={props.toggleMobileMenu} />
       </nav>
-    </header>
+    </HeaderStyled>
   );
 };
 
