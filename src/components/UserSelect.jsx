@@ -9,6 +9,20 @@ const UserImg = styled.img`
   height: auto;
 `;
 
+const Select = styled.select`
+  padding: 8px 15px;
+  border: 2px solid lightgray;
+  border-radius: 6px;
+  font-family: inherit;
+  border-radius: 4px;
+  height: 32.5px;
+  cursor: pointer;
+  min-width: 100px;
+  :hover {
+    border: 2px solid gray;
+  }
+`;
+
 class UserSelect extends React.Component {
   state = {
     users: []
@@ -28,7 +42,7 @@ class UserSelect extends React.Component {
         <p>Choose a different user</p>
         <form>
           <label>
-            <select
+            <Select
               onChange={this.handleChange}
               value={this.props.loggedInUser.username}
             >
@@ -39,7 +53,7 @@ class UserSelect extends React.Component {
                   </option>
                 );
               })}
-            </select>
+            </Select>
           </label>
         </form>
       </div>
