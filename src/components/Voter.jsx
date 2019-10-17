@@ -1,5 +1,6 @@
 import React from 'react';
 import * as api from '../utils/api';
+import Button from './Button';
 
 class Voter extends React.Component {
   state = {
@@ -9,20 +10,20 @@ class Voter extends React.Component {
     return (
       <div>
         <p>{this.props.votes + this.state.optimisticVotes} votes</p>
-        <button
+        <Button
           onClick={this.handleClick}
           name={1}
           disabled={this.state.optimisticVotes === 1}
         >
           Up vote
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={this.handleClick}
           name={-1}
           disabled={this.state.optimisticVotes === -1}
         >
           Down vote
-        </button>
+        </Button>
       </div>
     );
   }

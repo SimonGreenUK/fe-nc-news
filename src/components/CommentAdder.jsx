@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import user_default from '../assets/images/user_default.jpg';
+import Button from './Button';
 
 const CommentAdderWrapper = styled.div`
   display: flex;
@@ -58,7 +59,7 @@ class CommentAdder extends React.Component {
               required
             />
           </label>
-          <button>Comment</button>
+          <Button>Comment</Button>
         </form>
       </CommentAdderWrapper>
     );
