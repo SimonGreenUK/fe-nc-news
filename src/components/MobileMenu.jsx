@@ -28,19 +28,24 @@ class MobileMenu extends React.Component {
     return (
       <MobileMenuWrapper
         className={
-          this.props.mobileNavOpen ? 'mobile-nav-visible' : 'mobile-nav-hidden'
+          this.props.mobileMenuOpen ? 'mobile-nav-visible' : 'mobile-nav-hidden'
         }
       >
         <>
           {!this.state.isLoading && (
             <div>
               <li>
-                <Link to={'/articles'}>All</Link>
+                <Link to={'/articles'} onClick={this.props.toggleMobileMenu}>
+                  All
+                </Link>
               </li>
               {this.state.topics.map(topic => {
                 return (
                   <li key={topic.slug}>
-                    <Link to={`/articles/${topic.slug.toLowerCase()}`}>
+                    <Link
+                      to={`/articles/${topic.slug.toLowerCase()}`}
+                      onClick={this.props.toggleMobileMenu}
+                    >
                       {utils.capitaliseString(topic.slug)}
                     </Link>
                   </li>

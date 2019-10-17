@@ -22,7 +22,7 @@ const BurgerBar = styled.div`
 
 const HamburgerIcon = props => {
   const handleClick = () => {
-    props.toggleMobileNav();
+    props.toggleMobileMenu();
   };
   return (
     <>

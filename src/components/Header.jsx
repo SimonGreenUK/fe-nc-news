@@ -21,7 +21,7 @@ const Header = props => {
       <nav className="header-nav">
         <DesktopMenu />
         <HamburgerIcon
-          toggleMobileNav={props.toggleMobileNav}
+          toggleMobileMenu={props.toggleMobileMenu}
           className="align-burger"
         />
       </nav>

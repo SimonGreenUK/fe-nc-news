@@ -17,14 +17,14 @@ class App extends React.Component {
         'https://s-media-cache-ak0.pinimg.com/564x/39/62/ec/3962eca164e60cf46f979c1f57d4078b.jpg',
       name: 'Jess Jelly'
     },
-    mobileNavOpen: false
+    mobileMenuOpen: false
   };
   render() {
     return (
       <div className="App">
         <Header
           loggedInUser={this.state.loggedInUser}
-          toggleMobileNav={this.toggleMobileNav}
+          toggleMobileMenu={this.toggleMobileMenu}
         />
         <main className="main-wrapper">
           <div className="main-content">
@@ -44,7 +44,10 @@ class App extends React.Component {
             </Router>
           </div>
         </main>
-        <MobileMenu mobileNavOpen={this.state.mobileNavOpen} />
+        <MobileMenu
+          mobileMenuOpen={this.state.mobileMenuOpen}
+          toggleMobileMenu={this.toggleMobileMenu}
+        />
         {/* <Sidebar
           loggedInUser={this.state.loggedInUser}
           updateLoggedInUser={this.updateLoggedInUser}
@@ -58,10 +61,10 @@ class App extends React.Component {
     this.setState({ loggedInUser: user });
   };
 
-  toggleMobileNav = () => {
+  toggleMobileMenu = () => {
     this.setState(currentState => {
       return {
-        mobileNavOpen: !currentState.mobileNavOpen
+        mobileMenuOpen: !currentState.mobileMenuOpen
       };
     });
   };
