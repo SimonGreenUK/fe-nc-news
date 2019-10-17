@@ -25,27 +25,20 @@ class DesktopMenu extends React.Component {
   render() {
     return (
       <div className="desktop-menu">
-        {!this.state.isLoading && (
-          <ul>
-            <li>
-              <NavLink to={'/articles'}>All</NavLink>
-            </li>
-            {this.state.topics.map(topic => {
-              return (
-                <li key={topic.slug}>
-                  <NavLink to={`/articles/${topic.slug.toLowerCase()}`}>
-                    {utils.capitaliseString(topic.slug)}
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-        {this.state.isLoading && (
-          <h2>
-            <strong>LOADING...</strong>
-          </h2>
-        )}
+        <ul>
+          <li>
+            <NavLink to={'/articles'}>All</NavLink>
+          </li>
+          {this.state.topics.map(topic => {
+            return (
+              <li key={topic.slug}>
+                <NavLink to={`/articles/${topic.slug.toLowerCase()}`}>
+                  {utils.capitaliseString(topic.slug)}
+                </NavLink>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     );
   }

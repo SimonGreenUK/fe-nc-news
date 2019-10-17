@@ -5,6 +5,7 @@ import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 import CommentsList from '../components/CommentsList';
 import Voter from '../components/Voter';
+import Loading from '../components/Loading';
 import styled from 'styled-components';
 
 const SingleArticleWrapper = styled.div`
@@ -58,11 +59,7 @@ class SingleArticle extends React.Component {
             />
           </div>
         )}
-        {this.state.isLoading && (
-          <h2>
-            <strong>LOADING...</strong>
-          </h2>
-        )}
+        {this.state.isLoading && <Loading />}
       </>
     );
   }

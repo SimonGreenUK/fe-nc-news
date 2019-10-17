@@ -4,6 +4,7 @@ import * as api from '../utils/api';
 import CommentCard from './CommentCard';
 import CommentAdder from './CommentAdder';
 import styled from 'styled-components';
+// import Loading from '../components/Loading';
 
 const List = styled.ul`
   list-style: none;
@@ -18,32 +19,28 @@ class CommentsList extends React.Component {
   render() {
     return (
       <>
-        {!this.state.isLoading && (
-          <>
-            <CommentAdder
-              loggedInUser={this.props.loggedInUser}
-              addComment={this.addComment}
-            />
-            <h4>Comments</h4>
-            <List>
-              {this.state.comments.map(comment => {
-                return (
-                  <CommentCard
-                    {...comment}
-                    key={comment.comment_id}
-                    loggedInUser={this.props.loggedInUser}
-                    deleteComment={this.deleteComment}
-                  />
-                );
-              })}
-            </List>
-          </>
-        )}
-        {this.state.isLoading && (
-          <h2>
-            <strong>LOADING...</strong>
-          </h2>
-        )}
+        {/* {!this.state.isLoading && ( */}
+        <>
+          <CommentAdder
+            loggedInUser={this.props.loggedInUser}
+            addComment={this.addComment}
+          />
+          <h4>Comments</h4>
+          <List>
+            {this.state.comments.map(comment => {
+              return (
+                <CommentCard
+                  {...comment}
+                  key={comment.comment_id}
+                  loggedInUser={this.props.loggedInUser}
+                  deleteComment={this.deleteComment}
+                />
+              );
+            })}
+          </List>
+        </>
+        {/* )} */}
+        {/* {this.state.isLoading && <Loading />} */}
       </>
     );
   }
