@@ -2,17 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import user_default from '../assets/images/user_default.jpg';
 import Button from './Button';
-import TextInput from './TextInput';
+import Textarea from './Textarea';
 
 const CommentAdderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-height: 120px;
+  min-height: 200px;
 `;
 
 const Form = styled.form`
   display: flex;
+  align-items: flex-end;
 `;
 
 const UserImg = styled.img`
@@ -55,7 +56,7 @@ class CommentAdder extends React.Component {
 
         <Form onSubmit={this.handleSubmit}>
           <label>
-            <TextInput
+            <Textarea
               type="text"
               onChange={this.handleChange}
               name="commentBody"
