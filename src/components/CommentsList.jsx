@@ -49,7 +49,7 @@ class CommentsList extends React.Component {
     api
       .getComments(article_id)
       .then(comments => {
-        this.setState({ comments, isLoading: false });
+        this.setState({ comments, isLoading: false, deleteError: false });
       })
       .catch(({ response: { data } }) => {
         navigate(`/err`, {
