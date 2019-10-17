@@ -6,14 +6,6 @@ body {
   margin: 0;
 }
 
-.mobile-nav-visible {
-  width: 75vw;
-}
-
-.mobile-nav-hidden {
-  width: 0;
-}
-
 .App {
   display: grid;
   grid-template-rows: auto 1fr 100px;
@@ -79,9 +71,12 @@ body {
   list-style: none;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  border: 1px solid green;
+.mobile-nav-visible {
+  width: 75vw;
+}
+
+.mobile-nav-hidden {
+  width: 0;
 }
 
 .footer {
