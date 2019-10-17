@@ -44,6 +44,7 @@ const HeaderNav = styled.nav`
 `;
 
 const ChangeUserLink = styled(Link)`
+  font-size: 0.7rem;
   :hover {
     text-decoration: underline;
   }

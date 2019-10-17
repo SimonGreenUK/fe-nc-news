@@ -8,6 +8,10 @@ const ErrorMessage = styled.p`
   font-size: 0.7rem;
 `;
 
+const VotesAmount = styled.p`
+  font-size: 0.8rem;
+`;
+
 class Voter extends React.Component {
   state = {
     optimisticVotes: 0,
@@ -16,7 +20,9 @@ class Voter extends React.Component {
   render() {
     return (
       <div>
-        <p>{this.props.votes + this.state.optimisticVotes} votes</p>
+        <VotesAmount>
+          {this.props.votes + this.state.optimisticVotes} votes
+        </VotesAmount>
         <Button
           onClick={this.handleClick}
           name={1}

@@ -13,6 +13,10 @@ const SingleArticleWrapper = styled.div`
   border-bottom: 1px solid lightgray;
 `;
 
+const SingleArticlePostInfo = styled.div`
+  font-size: 0.7rem;
+`;
+
 const SingleArticleLink = styled(Link)`
   color: inherit;
   text-decoration: none;
@@ -43,13 +47,16 @@ class SingleArticle extends React.Component {
           <div>
             <SingleArticleWrapper>
               <h3>{title}</h3>
-              <SingleArticleLink to={`/articles/${topic}`}>
-                <span>{utils.capitaliseString(topic)}</span>
-              </SingleArticleLink>
-              <span> | </span>
-              <em>{author}</em>
-              <span> | </span>
-              <span>{utils.formatDate(created_at)}</span>
+              <SingleArticlePostInfo>
+                <SingleArticleLink to={`/articles/${topic}`}>
+                  <span>{utils.capitaliseString(topic)}</span>
+                </SingleArticleLink>
+                <span> | </span>
+                <em>{author}</em>
+                <span> | </span>
+                <span>{utils.formatDate(created_at)}</span>
+              </SingleArticlePostInfo>
+
               <p>{body}</p>
               <Voter votes={votes} type="articles" id={article_id} />
             </SingleArticleWrapper>

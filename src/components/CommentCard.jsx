@@ -22,7 +22,6 @@ const CommentCard = props => {
         <strong>{author}</strong> {utils.formatDate(created_at)}
       </p>
       <p>{body}</p>
-      <p>Comment votes: {votes}</p>
       <Voter votes={votes} type="comments" id={comment_id} />
       {loggedInUser.username === author && (
         <Button onClick={handleClick} name={comment_id}>
