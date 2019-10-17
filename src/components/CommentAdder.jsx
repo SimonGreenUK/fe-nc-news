@@ -1,4 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
+import no_img from '../assets/images/no_img.png';
+
+const UserImg = styled.img`
+  max-width: 40px;
+  height: auto;
+`;
+
+const UserInfoWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 1rem 10px 0;
+`;
+
+const UserInfo = styled.div`
+  display: flex;
+  min-width: 120px;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 class CommentAdder extends React.Component {
   state = {
@@ -7,7 +27,20 @@ class CommentAdder extends React.Component {
   render() {
     return (
       <>
-        <h6>Current user: {this.props.loggedInUser.username}</h6>
+        <UserInfoWrapper>
+          <UserInfo>
+            <UserImg
+              src={this.props.loggedInUser.avatar_url}
+              onError={e => {
+                e.target.onerror = null;
+                e.target.src = no_img;
+              }}
+              alt="user avatar"
+            />
+            <span>{this.props.loggedInUser.username}</span>
+          </UserInfo>
+        </UserInfoWrapper>
+
         <form onSubmit={this.handleSubmit}>
           <label>
             <input

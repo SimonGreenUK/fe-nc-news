@@ -5,6 +5,12 @@ import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 import CommentsList from '../components/CommentsList';
 import Voter from '../components/Voter';
+import styled from 'styled-components';
+
+const SingleArticleWrapper = styled.div`
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid lightgray;
+`;
 
 class SingleArticle extends React.Component {
   state = {
@@ -25,14 +31,16 @@ class SingleArticle extends React.Component {
       <>
         {!this.state.isLoading && (
           <div>
-            <h3>{title}</h3>
-            <Link to={`/articles/${topic}`}>
-              <p>{utils.capitaliseString(topic)}</p>
-            </Link>
-            <p>Author: {author}</p>
-            <p>{utils.formatDate(created_at)}</p>
-            <p>{body}</p>
-            <Voter votes={votes} type="articles" id={article_id} />
+            <SingleArticleWrapper>
+              <h3>{title}</h3>
+              <Link to={`/articles/${topic}`}>
+                <p>{utils.capitaliseString(topic)}</p>
+              </Link>
+              <p>Author: {author}</p>
+              <p>{utils.formatDate(created_at)}</p>
+              <p>{body}</p>
+              <Voter votes={votes} type="articles" id={article_id} />
+            </SingleArticleWrapper>
             <CommentsList
               article_id={article_id}
               loggedInUser={this.props.loggedInUser}
