@@ -4,6 +4,7 @@ import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 import ArticleCard from '../components/ArticleCard';
 import SortSelect from '../components/SortSelect';
+import Loading from '../components/Loading';
 import styled from 'styled-components';
 
 const List = styled.ul`
@@ -38,11 +39,7 @@ class ArticlesList extends React.Component {
             </List>
           </>
         )}
-        {this.state.isLoading && (
-          <h2>
-            <strong>LOADING...</strong>
-          </h2>
-        )}
+        {this.state.isLoading && <Loading />}
       </>
     );
   }
@@ -54,10 +51,8 @@ class ArticlesList extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.topic !== this.props.topic) {
       this.fetchArticles(this.props.topic);
-      this.setState({ isLoading: true });
     } else if (prevState.sort_by !== this.state.sort_by) {
       this.fetchArticles(this.props.topic, this.state.sort_by);
-      this.setState({ isLoading: true });
     }
   }
 
