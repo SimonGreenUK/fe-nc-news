@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import no_img from '../assets/images/no_img.png';
+import user_default from '../assets/images/user_default.jpg';
+
+const CommentAdderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 120px;
+`;
 
 const UserImg = styled.img`
   max-width: 40px;
@@ -10,7 +17,6 @@ const UserImg = styled.img`
 const UserInfoWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  padding: 10px 1rem 10px 0;
 `;
 
 const UserInfo = styled.div`
@@ -26,14 +32,14 @@ class CommentAdder extends React.Component {
   };
   render() {
     return (
-      <>
+      <CommentAdderWrapper>
         <UserInfoWrapper>
           <UserInfo>
             <UserImg
               src={this.props.loggedInUser.avatar_url}
               onError={e => {
                 e.target.onerror = null;
-                e.target.src = no_img;
+                e.target.src = user_default;
               }}
               alt="user avatar"
             />
@@ -54,7 +60,7 @@ class CommentAdder extends React.Component {
           </label>
           <button>Comment</button>
         </form>
-      </>
+      </CommentAdderWrapper>
     );
   }
 

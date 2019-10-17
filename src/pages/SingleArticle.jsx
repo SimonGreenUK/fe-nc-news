@@ -8,8 +8,17 @@ import Voter from '../components/Voter';
 import styled from 'styled-components';
 
 const SingleArticleWrapper = styled.div`
-  padding: 10px 0 10px 0;
+  padding: 10px 0 35px 0;
   border-bottom: 1px solid lightgray;
+`;
+
+const SingleArticleLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 class SingleArticle extends React.Component {
@@ -33,11 +42,13 @@ class SingleArticle extends React.Component {
           <div>
             <SingleArticleWrapper>
               <h3>{title}</h3>
-              <Link to={`/articles/${topic}`}>
-                <p>{utils.capitaliseString(topic)}</p>
-              </Link>
-              <p>Author: {author}</p>
-              <p>{utils.formatDate(created_at)}</p>
+              <SingleArticleLink to={`/articles/${topic}`}>
+                <span>{utils.capitaliseString(topic)}</span>
+              </SingleArticleLink>
+              <span> | </span>
+              <em>{author}</em>
+              <span> | </span>
+              <span>{utils.formatDate(created_at)}</span>
               <p>{body}</p>
               <Voter votes={votes} type="articles" id={article_id} />
             </SingleArticleWrapper>

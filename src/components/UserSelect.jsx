@@ -1,7 +1,13 @@
 import React from 'react';
 import * as api from '../utils/api';
-import no_img from '../assets/images/no_img.png';
+import user_default from '../assets/images/user_default.jpg';
 import { navigate } from '@reach/router';
+import styled from 'styled-components';
+
+const UserImg = styled.img`
+  max-width: 150px;
+  height: auto;
+`;
 
 class UserSelect extends React.Component {
   state = {
@@ -10,12 +16,12 @@ class UserSelect extends React.Component {
   render() {
     return (
       <div>
-        <p>Current user: {this.props.loggedInUser.username}</p>
-        <img
+        <h2>Current user: {this.props.loggedInUser.username}</h2>
+        <UserImg
           src={this.props.loggedInUser.avatar_url}
           onError={e => {
             e.target.onerror = null;
-            e.target.src = no_img;
+            e.target.src = user_default;
           }}
           alt="user avatar"
         />

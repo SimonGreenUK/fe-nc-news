@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import no_img from '../assets/images/no_img.png';
+import user_default from '../assets/images/user_default.jpg';
 import DesktopMenu from './DesktopMenu';
 import HamburgerIcon from './HamburgerIcon';
 import styled from 'styled-components';
@@ -26,7 +26,7 @@ const HeaderUserInfoWrapper = styled.div`
 
 const HeaderUserInfo = styled.div`
   display: flex;
-  min-width: 250px;
+  min-width: 275px;
   justify-content: space-around;
   align-items: center;
 `;
@@ -39,7 +39,7 @@ const HeaderTitleWrapper = styled.div`
 const HeaderNav = styled.nav`
   display: flex;
   justify-content: center;
-  padding: 0 1rem 0 1rem;
+  padding: 0 0.5rem 0 0.5rem;
 `;
 
 const ChangeUserLink = styled(Link)`
@@ -64,7 +64,7 @@ const Header = props => {
             src={props.loggedInUser.avatar_url}
             onError={e => {
               e.target.onerror = null;
-              e.target.src = no_img;
+              e.target.src = user_default;
             }}
             alt="user avatar"
           />

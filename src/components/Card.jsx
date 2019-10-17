@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const CardItem = styled.li`
   border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
   margin: 0 0 10px 0;
   padding: 5px 20px 5px 20px;
 
