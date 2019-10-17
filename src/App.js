@@ -2,6 +2,7 @@ import React from 'react';
 import { Router } from '@reach/router';
 import './styles/layout.css';
 import './styles/fonts.css';
+import './styles/mobile-nav.css';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';

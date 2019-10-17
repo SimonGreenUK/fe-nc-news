@@ -1,0 +1,7 @@
+.mobile-nav-visible {
+  width: 100vw;
+}
+
+.mobile-nav-hidden {
+  width: 0;
+}
