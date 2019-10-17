@@ -49,10 +49,6 @@ class App extends React.Component {
           mobileMenuOpen={this.state.mobileMenuOpen}
           toggleMobileMenu={this.toggleMobileMenu}
         />
-        {/* <Sidebar
-          loggedInUser={this.state.loggedInUser}
-          updateLoggedInUser={this.updateLoggedInUser}
-        /> */}
         <Footer />
       </div>
     );
