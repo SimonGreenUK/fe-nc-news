@@ -4,7 +4,6 @@ import * as api from '../utils/api';
 import CommentCard from './CommentCard';
 import CommentAdder from './CommentAdder';
 import styled from 'styled-components';
-// import Loading from '../components/Loading';
 
 const List = styled.ul`
   list-style: none;
@@ -14,7 +13,8 @@ const List = styled.ul`
 class CommentsList extends React.Component {
   state = {
     comments: [],
-    isLoading: true
+    isLoading: true,
+    deleteError: false
   };
   render() {
     return (
@@ -32,6 +32,7 @@ class CommentsList extends React.Component {
                 key={comment.comment_id}
                 loggedInUser={this.props.loggedInUser}
                 deleteComment={this.deleteComment}
+                deleteError={this.state.deleteError}
               />
             );
           })}
@@ -77,9 +78,14 @@ class CommentsList extends React.Component {
   };
 
   deleteComment = comment_id => {
-    api.deleteComment(comment_id).then(() => {
-      this.fetchComments(this.props.article_id);
-    });
+    api
+      .deleteComment(comment_id)
+      .then(() => {
+        this.fetchComments(this.props.article_id);
+      })
+      .catch(() => {
+        this.setState({ deleteError: true });
+      });
   };
 }
 

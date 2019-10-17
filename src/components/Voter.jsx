@@ -1,10 +1,17 @@
 import React from 'react';
 import * as api from '../utils/api';
 import Button from './Button';
+import styled from 'styled-components';
+
+const ErrorMessage = styled.p`
+  color: red;
+  font-size: 0.7rem;
+`;
 
 class Voter extends React.Component {
   state = {
-    optimisticVotes: 0
+    optimisticVotes: 0,
+    voteError: false
   };
   render() {
     return (
@@ -24,6 +31,12 @@ class Voter extends React.Component {
         >
           Down vote
         </Button>
+        {this.state.voteError && (
+          <ErrorMessage>
+            Error: your vote may not have been processed correctly - refresh the
+            page
+          </ErrorMessage>
+        )}
       </div>
     );
   }
@@ -32,10 +45,13 @@ class Voter extends React.Component {
     const { name } = e.target;
     this.setState(currentState => {
       return {
-        optimisticVotes: currentState.optimisticVotes + Number(name)
+        optimisticVotes: currentState.optimisticVotes + Number(name),
+        voteError: false
       };
     });
-    api.patchVote(this.props.type, this.props.id, name);
+    api.patchVote(this.props.type, this.props.id, name).catch(() => {
+      this.setState({ voteError: true });
+    });
   };
 }
 

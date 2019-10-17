@@ -3,6 +3,12 @@ import * as utils from '../utils/utils';
 import Voter from './Voter';
 import Card from './Card';
 import Button from './Button';
+import styled from 'styled-components';
+
+const ErrorMessage = styled.p`
+  color: red;
+  font-size: 0.7rem;
+`;
 
 const CommentCard = props => {
   const handleClick = e => {
@@ -22,6 +28,11 @@ const CommentCard = props => {
         <Button onClick={handleClick} name={comment_id}>
           Delete comment
         </Button>
+      )}
+      {props.deleteError && (
+        <ErrorMessage>
+          Error: your comment may not have been deleted - refresh the page
+        </ErrorMessage>
       )}
     </Card>
   );
