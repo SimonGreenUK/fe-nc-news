@@ -11,6 +11,7 @@ import SingleArticle from './pages/SingleArticle';
 import ChangeUser from './pages/ChangeUser';
 import MobileMenu from './components/MobileMenu';
 import ErrorPage from './components/ErrorPage';
+import HomePage from './pages/HomePage';
 
 const MainGridWrapper = styled.main`
   grid-area: main;
@@ -47,6 +48,7 @@ class App extends React.Component {
         <MainGridWrapper>
           <MainContent>
             <Router primary={false}>
+              <HomePage path="/" />
               <ArticlesList path="/articles" />
               <ArticlesList path="/articles/:topic" />
               <SingleArticle

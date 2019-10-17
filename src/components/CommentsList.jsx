@@ -19,28 +19,23 @@ class CommentsList extends React.Component {
   render() {
     return (
       <>
-        {/* {!this.state.isLoading && ( */}
-        <>
-          <CommentAdder
-            loggedInUser={this.props.loggedInUser}
-            addComment={this.addComment}
-          />
-          <h4>Comments</h4>
-          <List>
-            {this.state.comments.map(comment => {
-              return (
-                <CommentCard
-                  {...comment}
-                  key={comment.comment_id}
-                  loggedInUser={this.props.loggedInUser}
-                  deleteComment={this.deleteComment}
-                />
-              );
-            })}
-          </List>
-        </>
-        {/* )} */}
-        {/* {this.state.isLoading && <Loading />} */}
+        <CommentAdder
+          loggedInUser={this.props.loggedInUser}
+          addComment={this.addComment}
+        />
+        <h4>Comments</h4>
+        <List>
+          {this.state.comments.map(comment => {
+            return (
+              <CommentCard
+                {...comment}
+                key={comment.comment_id}
+                loggedInUser={this.props.loggedInUser}
+                deleteComment={this.deleteComment}
+              />
+            );
+          })}
+        </List>
       </>
     );
   }
