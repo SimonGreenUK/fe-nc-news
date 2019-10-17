@@ -3,8 +3,8 @@ import { Link } from '@reach/router';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
-import CommentsList from './CommentsList';
-import Voter from './Voter';
+import CommentsList from '../components/CommentsList';
+import Voter from '../components/Voter';
 
 class SingleArticle extends React.Component {
   state = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import UserSelect from './UserSelect';
+import UserSelect from '../components/UserSelect';
 
 class SignIn extends React.Component {
   render() {

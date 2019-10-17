@@ -3,6 +3,19 @@ import { Link } from '@reach/router';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
+import styled from 'styled-components';
+
+const NavLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 5px;
+  :hover {
+    color: lightgray;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+  }
+`;
 
 class DesktopMenu extends React.Component {
   state = {
@@ -15,14 +28,14 @@ class DesktopMenu extends React.Component {
         {!this.state.isLoading && (
           <ul>
             <li>
-              <Link to={'/articles'}>All</Link>
+              <NavLink to={'/articles'}>All</NavLink>
             </li>
             {this.state.topics.map(topic => {
               return (
                 <li key={topic.slug}>
-                  <Link to={`/articles/${topic.slug.toLowerCase()}`}>
+                  <NavLink to={`/articles/${topic.slug.toLowerCase()}`}>
                     {utils.capitaliseString(topic.slug)}
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}

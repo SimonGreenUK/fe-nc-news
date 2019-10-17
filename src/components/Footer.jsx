@@ -1,8 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledFooter = styled.footer`
+  grid-area: footer;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+`;
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <StyledFooter className="footer">
       <p>
         Copyright{' '}
         <a
@@ -13,7 +33,7 @@ const Footer = () => {
           Simon Green
         </a>
       </p>
-    </footer>
+    </StyledFooter>
   );
 };
 

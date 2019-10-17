@@ -2,8 +2,8 @@ import React from 'react';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
-import ArticleCard from './ArticleCard';
-import SortSelect from './SortSelect';
+import ArticleCard from '../components/ArticleCard';
+import SortSelect from '../components/SortSelect';
 import styled from 'styled-components';
 
 const List = styled.ul`

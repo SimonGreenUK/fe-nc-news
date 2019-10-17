@@ -6,16 +6,45 @@ import HamburgerIcon from './HamburgerIcon';
 import styled from 'styled-components';
 
 const HeaderStyled = styled.header`
+  grid-area: header;
   background-color: black;
   color: white;
 
   a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+  }
+`;
 
-    :hover {
-      text-decoration: underline;
-    }
+const HeaderUserInfoWrapper = styled.div`
+  border-bottom: 1px solid #a7a6a6;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 1rem 10px 1rem;
+`;
+
+const HeaderUserInfo = styled.div`
+  display: flex;
+  min-width: 250px;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const HeaderTitleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const HeaderNav = styled.nav`
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem 0 1rem;
+`;
+
+const ChangeUserLink = styled(Link)`
+  :hover {
+    text-decoration: underline;
   }
 `;
 
@@ -27,9 +56,9 @@ const UserImg = styled.img`
 const Header = props => {
   return (
     <HeaderStyled className="header">
-      <div className="header-current-user-info">
-        <div className="header-current-user-info-wrapper">
-          <Link to={`/change-user`}>Change User</Link>
+      <HeaderUserInfoWrapper>
+        <HeaderUserInfo>
+          <ChangeUserLink to={`/change-user`}>Change User</ChangeUserLink>
           <span>{props.loggedInUser.username}</span>
           <UserImg
             src={props.loggedInUser.avatar_url}
@@ -39,15 +68,15 @@ const Header = props => {
             }}
             alt="user avatar"
           />
-        </div>
-      </div>
-      <div className="header-title">
+        </HeaderUserInfo>
+      </HeaderUserInfoWrapper>
+      <HeaderTitleWrapper>
         <h1>NC NEWS</h1>
-      </div>
-      <nav className="header-nav">
+      </HeaderTitleWrapper>
+      <HeaderNav>
         <DesktopMenu />
         <HamburgerIcon toggleMobileMenu={props.toggleMobileMenu} />
-      </nav>
+      </HeaderNav>
     </HeaderStyled>
   );
 };

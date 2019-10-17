@@ -2,13 +2,29 @@ import React from 'react';
 import { Router } from '@reach/router';
 import './styles/layout.css';
 import './styles/fonts.css';
+import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ArticlesList from './components/ArticlesList';
-import SingleArticle from './components/SingleArticle';
-import ChangeUser from './components/ChangeUser';
+import ArticlesList from './pages/ArticlesList';
+import SingleArticle from './pages/SingleArticle';
+import ChangeUser from './pages/ChangeUser';
 import MobileMenu from './components/MobileMenu';
 import ErrorPage from './components/ErrorPage';
+
+const MainGridWrapper = styled.main`
+  grid-area: main;
+  display: grid;
+  grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 850px) minmax(
+      1.2rem,
+      1fr
+    );
+  min-height: 100vh;
+`;
+
+const MainContent = styled.div`
+  grid-column: 2;
+  padding-top: 20px;
+`;
 
 class App extends React.Component {
   state = {
@@ -27,8 +43,8 @@ class App extends React.Component {
           loggedInUser={this.state.loggedInUser}
           toggleMobileMenu={this.toggleMobileMenu}
         />
-        <main className="main-grid-wrapper">
-          <div className="main-content">
+        <MainGridWrapper>
+          <MainContent>
             <Router primary={false}>
               <ArticlesList path="/articles" />
               <ArticlesList path="/articles/:topic" />
@@ -43,8 +59,8 @@ class App extends React.Component {
               />
               <ErrorPage default />
             </Router>
-          </div>
-        </main>
+          </MainContent>
+        </MainGridWrapper>
         <MobileMenu
           mobileMenuOpen={this.state.mobileMenuOpen}
           toggleMobileMenu={this.toggleMobileMenu}
