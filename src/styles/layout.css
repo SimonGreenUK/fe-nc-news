@@ -36,6 +36,13 @@ body {
   color: white;
 }
 
+.header-current-user-info-wrapper {
+  display: flex;
+  min-width: 250px;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .header-title {
   display: flex;
   justify-content: center;
