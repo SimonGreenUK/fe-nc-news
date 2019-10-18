@@ -8,7 +8,7 @@ const TextareaPrimary = styled.textarea`
   margin: 8px 10px 0 0;
   font-family: inherit;
   border: 2px solid var(--light-gray);
-  transition: all 0.3s ease;
+  transition: border 0.3s ease;
   :hover {
     border: 2px solid var(--dark-gray);
   }
