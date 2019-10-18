@@ -38,11 +38,11 @@ To run the tests for the utility functions run the following command:
 npm test
 ```
 
-## `Hosted version`
+## Hosted version
 
 Visit [https://nc-news-sg.netlify.com/](https://nc-news-sg.netlify.com/) to see a hosted version of the project.
 
-## `Back-end`
+## Back-end
 
 The repository for the back-end project can be viewed here [https://github.com/SimonGreenUK/be-nc-news](https://github.com/SimonGreenUK/be-nc-news).
 
