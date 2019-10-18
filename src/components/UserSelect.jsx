@@ -23,13 +23,20 @@ const Select = styled.select`
   }
 `;
 
+const UserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 class UserSelect extends React.Component {
   state = {
     users: []
   };
   render() {
     return (
-      <div>
+      <UserInfo>
         <h2>Current user: {this.props.loggedInUser.username}</h2>
         <UserImg
           src={this.props.loggedInUser.avatar_url}
@@ -56,7 +63,7 @@ class UserSelect extends React.Component {
             </Select>
           </label>
         </form>
-      </div>
+      </UserInfo>
     );
   }
 
