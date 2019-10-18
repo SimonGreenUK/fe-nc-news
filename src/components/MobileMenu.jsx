@@ -53,34 +53,32 @@ class MobileMenu extends React.Component {
           this.props.mobileMenuOpen ? 'mobile-nav-visible' : 'mobile-nav-hidden'
         }
       >
-        <>
-          {!this.state.isLoading && (
-            <MobileMenuInnerWrapper>
-              <li>
-                <Link to={'/articles'} onClick={this.props.toggleMobileMenu}>
-                  All
-                </Link>
-              </li>
-              {this.state.topics.map(topic => {
-                return (
-                  <li key={topic.slug}>
-                    <Link
-                      to={`/articles/${topic.slug.toLowerCase()}`}
-                      onClick={this.props.toggleMobileMenu}
-                    >
-                      {utils.capitaliseString(topic.slug)}
-                    </Link>
-                  </li>
-                );
-              })}
-            </MobileMenuInnerWrapper>
-          )}
-          {this.state.isLoading && (
-            <h2>
-              <strong>LOADING...</strong>
-            </h2>
-          )}
-        </>
+        {!this.state.isLoading && (
+          <MobileMenuInnerWrapper>
+            <li>
+              <Link to={'/articles'} onClick={this.props.toggleMobileMenu}>
+                All
+              </Link>
+            </li>
+            {this.state.topics.map(topic => {
+              return (
+                <li key={topic.slug}>
+                  <Link
+                    to={`/articles/${topic.slug.toLowerCase()}`}
+                    onClick={this.props.toggleMobileMenu}
+                  >
+                    {utils.capitaliseString(topic.slug)}
+                  </Link>
+                </li>
+              );
+            })}
+          </MobileMenuInnerWrapper>
+        )}
+        {this.state.isLoading && (
+          <h2>
+            <strong>LOADING...</strong>
+          </h2>
+        )}
       </MobileMenuWrapper>
     );
   }

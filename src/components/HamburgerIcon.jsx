@@ -36,13 +36,11 @@ const HamburgerIcon = props => {
     props.toggleMobileMenu();
   };
   return (
-    <>
-      <BurgerButton onClick={handleClick}>
-        <BurgerBar />
-        <BurgerBar />
-        <BurgerBar />
-      </BurgerButton>
-    </>
+    <BurgerButton onClick={handleClick}>
+      <BurgerBar />
+      <BurgerBar />
+      <BurgerBar />
+    </BurgerButton>
   );
 };
 
