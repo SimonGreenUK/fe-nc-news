@@ -5,6 +5,7 @@ const ButtonPrimary = styled.button`
   font-size: 0.5rem;
   font-family: inherit;
   font-weight: 900;
+  border: 1px solid var(--turquoise-main);
   border-radius: 2rem;
   text-transform: uppercase;
   width: 7rem;
@@ -13,7 +14,8 @@ const ButtonPrimary = styled.button`
   transition: all 0.3s ease;
 
   :hover {
-    border: solid 1px grey;
+    background-color: var(--turquoise-main);
+    color: white;
     cursor: pointer;
   }
 `;

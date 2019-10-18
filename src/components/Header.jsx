@@ -19,7 +19,7 @@ const HeaderStyled = styled.header`
 `;
 
 const HeaderUserInfoWrapper = styled.div`
-  border-bottom: 1px solid #a7a6a6;
+  border-bottom: 1px solid var(--turquoise-main);
   display: flex;
   justify-content: flex-end;
   padding: 10px 1rem 10px 1rem;

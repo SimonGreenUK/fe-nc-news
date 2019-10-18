@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Select = styled.select`
   padding: 8px 15px;
-  border: 2px solid lightgray;
+  border: 2px solid var(--light-gray);
   border-radius: 6px;
   font-family: inherit;
   border-radius: 4px;
@@ -12,7 +12,7 @@ const Select = styled.select`
   min-width: 100px;
   transition: all 0.3s ease;
   :hover {
-    border: 2px solid gray;
+    border: 2px solid var(--dark-gray);
   }
 `;
 

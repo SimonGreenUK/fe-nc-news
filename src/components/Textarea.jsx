@@ -7,10 +7,10 @@ const TextareaPrimary = styled.textarea`
   padding: 12px 10px;
   margin: 8px 10px 0 0;
   font-family: inherit;
-  border: 2px solid lightgray;
+  border: 2px solid var(--light-gray);
   transition: all 0.3s ease;
   :hover {
-    border: 2px solid gray;
+    border: 2px solid var(--dark-gray);
   }
   border-radius: 2px;
 `;

@@ -12,7 +12,7 @@ const NavLink = styled(Link)`
   border-radius: 5px;
   transition: all 0.3s ease;
   :hover {
-    color: lightgray;
+    color: var(--turquoise-main);
     background-color: rgba(255, 255, 255, 0.2);
     text-decoration: none;
   }

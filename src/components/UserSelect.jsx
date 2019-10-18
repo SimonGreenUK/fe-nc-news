@@ -11,7 +11,7 @@ const UserImg = styled.img`
 
 const Select = styled.select`
   padding: 8px 15px;
-  border: 2px solid lightgray;
+  border: 2px solid var(--light-gray);
   border-radius: 6px;
   font-family: inherit;
   border-radius: 4px;
@@ -19,7 +19,7 @@ const Select = styled.select`
   cursor: pointer;
   min-width: 100px;
   :hover {
-    border: 2px solid gray;
+    border: 2px solid var(--dark-gray);
   }
 `;
 
