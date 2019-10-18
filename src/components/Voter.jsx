@@ -24,15 +24,13 @@ class Voter extends React.Component {
           {this.props.votes + this.state.optimisticVotes} votes
         </VotesAmount>
         <Button
-          onClick={this.handleClick}
-          name={1}
+          onClick={() => this.handleClick(1)}
           disabled={this.state.optimisticVotes === 1}
         >
           Up vote
         </Button>
         <Button
-          onClick={this.handleClick}
-          name={-1}
+          onClick={() => this.handleClick(-1)}
           disabled={this.state.optimisticVotes === -1}
         >
           Down vote
@@ -47,15 +45,14 @@ class Voter extends React.Component {
     );
   }
 
-  handleClick = e => {
-    const { name } = e.target;
+  handleClick = voteChange => {
     this.setState(currentState => {
       return {
-        optimisticVotes: currentState.optimisticVotes + Number(name),
+        optimisticVotes: currentState.optimisticVotes + voteChange,
         voteError: false
       };
     });
-    api.patchVote(this.props.type, this.props.id, name).catch(() => {
+    api.patchVote(this.props.type, this.props.id, voteChange).catch(() => {
       this.setState({ voteError: true });
     });
   };
