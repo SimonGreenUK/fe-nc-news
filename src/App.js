@@ -78,11 +78,23 @@ class App extends React.Component {
   };
 
   toggleMobileMenu = () => {
-    this.setState(currentState => {
-      return {
-        mobileMenuOpen: !currentState.mobileMenuOpen
-      };
-    });
+    this.setState(
+      currentState => {
+        return {
+          mobileMenuOpen: !currentState.mobileMenuOpen
+        };
+      },
+      () => {
+        if (this.state.mobileMenuOpen) {
+          document.body.classList.remove('allow-scrollable-body');
+          document.body.classList.add('prevent-scrollable-body');
+          window.scrollTo(0, 0);
+        } else {
+          document.body.classList.add('allow-scrollable-body');
+          document.body.classList.remove('prevent-scrollable-body');
+        }
+      }
+    );
   };
 }
 

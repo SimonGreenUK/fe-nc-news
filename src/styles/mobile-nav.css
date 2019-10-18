@@ -1,7 +1,15 @@
 .mobile-nav-visible {
-  width: 80vw;
+  width: 100vw;
 }
 
 .mobile-nav-hidden {
   width: 0;
+}
+
+.allow-scrollable-body {
+  overflow: scroll;
+}
+
+.prevent-scrollable-body {
+  overflow: hidden;
 }

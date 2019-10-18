@@ -18,5 +18,6 @@ body {
 @media all and (max-width: 750px) {
   .desktop-menu {
     visibility: hidden;
+    height: 0;
   }
 }

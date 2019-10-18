@@ -10,9 +10,9 @@ const MobileMenuWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  justify-self: flex-start;
   height: 100vh;
   position: fixed;
-  /* right: 55px; */
   background: black;
   overflow: hidden;
   transition: width 0.3s ease - out;

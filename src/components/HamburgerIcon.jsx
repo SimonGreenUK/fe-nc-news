@@ -3,7 +3,8 @@ import React from 'react';
 
 const BurgerButton = styled.button`
   position: absolute;
-  right: 5px;
+  top: 10px;
+  left: 0;
   display: flex;
   visibility: hidden;
   flex-direction: column;
@@ -14,7 +15,7 @@ const BurgerButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 0 0 5px 0;
   z-index: 10;
 
   @media all and (max-width: 750px) {

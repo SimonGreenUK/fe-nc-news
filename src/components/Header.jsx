@@ -9,7 +9,7 @@ const HeaderStyled = styled.header`
   grid-area: header;
   background-color: black;
   color: white;
-  min-height: 205px;
+  min-height: 160px;
 
   a {
     text-decoration: none;
@@ -23,6 +23,7 @@ const HeaderUserInfoWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: 10px 1rem 10px 1rem;
+  min-height: 80px;
 `;
 
 const HeaderUserInfo = styled.div`
@@ -59,6 +60,7 @@ const Header = props => {
   return (
     <HeaderStyled className="header">
       <HeaderUserInfoWrapper>
+        <HamburgerIcon toggleMobileMenu={props.toggleMobileMenu} />
         <HeaderUserInfo>
           <ChangeUserLink to={`/change-user`}>Change User</ChangeUserLink>
           <span>{props.loggedInUser.username}</span>
@@ -77,7 +79,6 @@ const Header = props => {
       </HeaderTitleWrapper>
       <HeaderNav>
         <DesktopMenu />
-        <HamburgerIcon toggleMobileMenu={props.toggleMobileMenu} />
       </HeaderNav>
     </HeaderStyled>
   );
