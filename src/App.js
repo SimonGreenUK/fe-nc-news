@@ -13,6 +13,7 @@ import ChangeUser from './pages/ChangeUser';
 import MobileMenu from './components/MobileMenu';
 import ErrorPage from './components/ErrorPage';
 import HomePage from './pages/HomePage';
+import throttle from 'lodash.throttle';
 
 const MainGridWrapper = styled.main`
   grid-area: main;
@@ -73,6 +74,10 @@ class App extends React.Component {
     );
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.mobileMenuOpen !== this.state.mobileMenuOpen) {
       if (this.state.mobileMenuOpen) {
@@ -97,6 +102,13 @@ class App extends React.Component {
       };
     });
   };
+
+  handleResize = throttle(e => {
+    const windowSize = window.innerWidth;
+    if (this.state.mobileMenuOpen && windowSize > 750) {
+      this.setState({ mobileMenuOpen: false });
+    }
+  }, 2000);
 }
 
 export default App;
