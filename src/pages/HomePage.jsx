@@ -24,7 +24,6 @@ const HomePageLink = styled(Link)`
 const HomePage = () => {
   return (
     <HomeWrapper>
-      <h2>Welcome to Northcoders News</h2>
       <HomeImage src={homepageimg} alt="city scape" />
       <p>
         Northcoders News is a social news aggregation, web content rating, and
