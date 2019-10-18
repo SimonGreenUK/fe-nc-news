@@ -21,7 +21,6 @@ const MainGridWrapper = styled.main`
       1.2rem,
       1fr
     );
-  min-height: 100vh;
 `;
 
 const MainContent = styled.div`
