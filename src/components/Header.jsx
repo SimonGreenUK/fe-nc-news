@@ -56,6 +56,11 @@ const UserImg = styled.img`
   height: auto;
 `;
 
+const HeaderTitleLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+`;
+
 const Header = props => {
   return (
     <HeaderStyled className="header">
@@ -75,7 +80,9 @@ const Header = props => {
         </HeaderUserInfo>
       </HeaderUserInfoWrapper>
       <HeaderTitleWrapper>
-        <h1>NC NEWS</h1>
+        <HeaderTitleLink to={'/'}>
+          <h1>NC NEWS</h1>
+        </HeaderTitleLink>
       </HeaderTitleWrapper>
       <HeaderNav>
         <DesktopMenu />
