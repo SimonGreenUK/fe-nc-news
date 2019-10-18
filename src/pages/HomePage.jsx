@@ -13,7 +13,7 @@ const HomeWrapper = styled.div`
 `;
 
 const HomeImage = styled.img`
-  max-width: 670px;
+  max-width: 100%;
   height: auto;
 `;
 
