@@ -73,28 +73,29 @@ class App extends React.Component {
     );
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.mobileMenuOpen !== this.state.mobileMenuOpen) {
+      if (this.state.mobileMenuOpen) {
+        document.body.classList.remove('allow-scrollable-body');
+        document.body.classList.add('prevent-scrollable-body');
+        window.scrollTo(0, 0);
+      } else {
+        document.body.classList.add('allow-scrollable-body');
+        document.body.classList.remove('prevent-scrollable-body');
+      }
+    }
+  }
+
   updateLoggedInUser = user => {
     this.setState({ loggedInUser: user });
   };
 
   toggleMobileMenu = () => {
-    this.setState(
-      currentState => {
-        return {
-          mobileMenuOpen: !currentState.mobileMenuOpen
-        };
-      },
-      () => {
-        if (this.state.mobileMenuOpen) {
-          document.body.classList.remove('allow-scrollable-body');
-          document.body.classList.add('prevent-scrollable-body');
-          window.scrollTo(0, 0);
-        } else {
-          document.body.classList.add('allow-scrollable-body');
-          document.body.classList.remove('prevent-scrollable-body');
-        }
-      }
-    );
+    this.setState(currentState => {
+      return {
+        mobileMenuOpen: !currentState.mobileMenuOpen
+      };
+    });
   };
 }
 
