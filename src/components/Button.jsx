@@ -17,6 +17,9 @@ const ButtonPrimary = styled.button`
     background-color: var(--turquoise-main);
     color: white;
     cursor: pointer;
+    :disabled {
+      color: var(--light-gray);
+    }
   }
 `;
 
