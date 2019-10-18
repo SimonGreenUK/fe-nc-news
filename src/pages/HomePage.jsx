@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from '@reach/router';
+import homepageimg from '../assets/images/homepageimg.jpg';
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -11,19 +12,24 @@ const HomeWrapper = styled.div`
   color: black;
 `;
 
+const HomeImage = styled.img`
+  max-width: 670px;
+  height: auto;
+`;
+
 const HomePageLink = styled(Link)`
   color: inherit;
-  text-decoration: none;
-
-  :hover {
-    text-decoration: underline;
-  }
 `;
 
 const HomePage = () => {
   return (
     <HomeWrapper>
-      <h2>Welcome to NC News</h2>
+      <h2>Welcome to Northcoders News</h2>
+      <HomeImage src={homepageimg} alt="city scape" />
+      <p>
+        Northcoders News is a social news aggregation, web content rating, and
+        discussion website.
+      </p>
       <HomePageLink to={'/articles'}>View some articles</HomePageLink>
     </HomeWrapper>
   );
