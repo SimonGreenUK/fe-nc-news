@@ -13,7 +13,7 @@ const CommentAdderWrapper = styled.div`
 
 const Form = styled.form`
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
 `;
 
 const UserImg = styled.img`
@@ -24,6 +24,7 @@ const UserImg = styled.img`
 const UserInfoWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
+  padding-top: 10px;
 `;
 
 const UserInfo = styled.div`
