@@ -29,15 +29,11 @@ class ArticlesList extends React.Component {
           sort_by={this.state.sort_by}
         />
         {!this.state.isLoading && (
-          <>
-            <List>
-              {this.state.articles.map(article => {
-                return (
-                  <ArticleCard article={article} key={article.article_id} />
-                );
-              })}
-            </List>
-          </>
+          <List>
+            {this.state.articles.map(article => {
+              return <ArticleCard article={article} key={article.article_id} />;
+            })}
+          </List>
         )}
         {this.state.isLoading && <Loading />}
       </>
