@@ -20,6 +20,7 @@ const UserImg = styled.img`
   max-width: 40px;
   height: auto;
   margin-right: 10px;
+  border-radius: 50%;
 `;
 
 const UserInfoWrapper = styled.div`
