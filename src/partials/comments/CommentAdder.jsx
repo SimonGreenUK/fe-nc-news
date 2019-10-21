@@ -19,7 +19,7 @@ const Form = styled.form`
 const UserImg = styled.img`
   max-width: 40px;
   height: auto;
-  margin-right: 10px;
+  margin-right: 8.5px;
   border-radius: 50%;
 `;
 
@@ -32,7 +32,6 @@ const UserInfoWrapper = styled.div`
 const UserInfo = styled.div`
   display: flex;
   min-width: 120px;
-  justify-content: space-between;
   align-items: center;
 `;
 
