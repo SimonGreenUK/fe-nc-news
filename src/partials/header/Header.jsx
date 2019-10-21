@@ -28,9 +28,8 @@ const HeaderUserInfoWrapper = styled.div`
 
 const HeaderUserInfo = styled.div`
   display: flex;
-  min-width: 275px;
-  justify-content: space-around;
   align-items: center;
+  font-size: 0.85rem;
 `;
 
 const HeaderTitleWrapper = styled.div`
@@ -45,7 +44,9 @@ const HeaderNav = styled.nav`
 `;
 
 const ChangeUserLink = styled(Link)`
-  font-size: 0.7rem;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
   :hover {
     color: var(--turquoise-main);
     text-decoration: underline;
@@ -56,6 +57,11 @@ const UserImg = styled.img`
   max-width: 40px;
   height: auto;
   border-radius: 50%;
+  margin-left: 10px;
+`;
+
+const LoggedInAs = styled.span`
+  color: var(--light-gray);
 `;
 
 const HeaderTitleLink = styled(Link)`
@@ -69,16 +75,18 @@ const Header = props => {
       <HeaderUserInfoWrapper>
         <HamburgerIcon toggleMobileMenu={props.toggleMobileMenu} />
         <HeaderUserInfo>
-          <ChangeUserLink to={`/change-user`}>Change User</ChangeUserLink>
-          <span>{props.loggedInUser.username}</span>
-          <UserImg
-            src={props.loggedInUser.avatar_url}
-            onError={e => {
-              e.target.onerror = null;
-              e.target.src = user_default;
-            }}
-            alt="user avatar"
-          />
+          <LoggedInAs>Logged in as:</LoggedInAs>
+          <ChangeUserLink to={`/change-user`}>
+            {props.loggedInUser.username}
+            <UserImg
+              src={props.loggedInUser.avatar_url}
+              onError={e => {
+                e.target.onerror = null;
+                e.target.src = user_default;
+              }}
+              alt="user avatar"
+            />
+          </ChangeUserLink>
         </HeaderUserInfo>
       </HeaderUserInfoWrapper>
       <HeaderTitleWrapper>
