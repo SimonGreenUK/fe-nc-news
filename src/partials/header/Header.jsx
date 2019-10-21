@@ -23,13 +23,12 @@ const HeaderUserInfoWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: 10px 1rem 10px 1rem;
-  min-height: 80px;
 `;
 
 const HeaderUserInfo = styled.div`
   display: flex;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 `;
 
 const HeaderTitleWrapper = styled.div`
@@ -54,7 +53,7 @@ const ChangeUserLink = styled(Link)`
 `;
 
 const UserImg = styled.img`
-  max-width: 40px;
+  max-width: 30px;
   height: auto;
   border-radius: 50%;
   margin-left: 10px;
@@ -71,6 +70,9 @@ const HeaderTitleLink = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.75rem;
+  @media all and (max-width: 750px) {
+    font-size: 1rem;
+  }
 `;
 
 const Header = props => {
