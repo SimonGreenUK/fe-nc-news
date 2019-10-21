@@ -10,6 +10,11 @@ const ErrorMessage = styled.p`
   font-size: 0.7rem;
 `;
 
+const PostedDate = styled.span`
+  color: var(--light-gray-text);
+  font-size: 0.7rem;
+`;
+
 const CommentCard = props => {
   const handleClick = e => {
     const { name } = e.target;
@@ -19,7 +24,8 @@ const CommentCard = props => {
   return (
     <Card>
       <p>
-        <strong>{author}</strong> {utils.formatDate(created_at)}
+        <strong>{author}</strong>{' '}
+        <PostedDate>{utils.formatDate(created_at)}</PostedDate>
       </p>
       <p>{body}</p>
       <Voter votes={votes} type="comments" id={comment_id} />
