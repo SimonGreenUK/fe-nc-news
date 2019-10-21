@@ -6,6 +6,7 @@ const LinkPrimary = styled(Link)`
   color: inherit;
   text-decoration: none;
   :hover {
+    color: var(--turquoise-main);
     text-decoration: underline;
   }
 `;

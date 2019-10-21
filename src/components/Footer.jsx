@@ -15,6 +15,7 @@ const StyledFooter = styled.footer`
     color: inherit;
 
     :hover {
+      color: var(--turquoise-main);
       text-decoration: underline;
     }
   }
