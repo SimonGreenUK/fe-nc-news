@@ -24,15 +24,6 @@ const MobileMenuWrapper = styled.div`
   li {
     list-style: none;
   }
-
-  /* a {
-    text-decoration: none;
-    color: inherit;
-
-    :hover {
-      text-decoration: underline;
-    }
-  } */
 `;
 
 const MobileMenuInnerWrapper = styled.div`
