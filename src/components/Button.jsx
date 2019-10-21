@@ -12,6 +12,7 @@ const ButtonPrimary = styled.button`
   height: 2rem;
   margin: 5px;
   transition: all 0.3s ease;
+  color: inherit;
 
   :hover {
     background-color: var(--turquoise-main);
