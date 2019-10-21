@@ -9,12 +9,12 @@ const NavLink = styled(Link)`
   color: white;
   text-decoration: none;
   padding: 12px;
-  border-radius: 5px;
+  border-bottom: 4px solid transparent;
   transition: all 0.3s ease;
   :hover {
     color: var(--turquoise-main);
-    background-color: rgba(255, 255, 255, 0.2);
     text-decoration: none;
+    border-bottom: 4px solid var(--turquoise-main);
   }
 `;
 
@@ -22,6 +22,7 @@ const DesktopMenuList = styled.ul`
   display: flex;
   align-items: center;
   padding: 0;
+  margin-bottom: 8px;
 `;
 
 const DesktopMenuListItem = styled.li`
