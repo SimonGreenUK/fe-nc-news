@@ -4,6 +4,7 @@ import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
 import styled from 'styled-components';
+import LinkStyled from '../components/LinkStyled';
 
 const MobileMenuWrapper = styled.div`
   display: flex;
@@ -18,20 +19,20 @@ const MobileMenuWrapper = styled.div`
   transition: width 0.3s ease - out;
   text-align: left;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   li {
     list-style: none;
   }
 
-  a {
+  /* a {
     text-decoration: none;
     color: inherit;
 
     :hover {
       text-decoration: underline;
     }
-  }
+  } */
 `;
 
 const MobileMenuInnerWrapper = styled.div`
@@ -56,19 +57,22 @@ class MobileMenu extends React.Component {
         {!this.state.isLoading && (
           <MobileMenuInnerWrapper>
             <li>
-              <Link to={'/articles'} onClick={this.props.toggleMobileMenu}>
+              <LinkStyled
+                to={'/articles'}
+                onClick={this.props.toggleMobileMenu}
+              >
                 All
-              </Link>
+              </LinkStyled>
             </li>
             {this.state.topics.map(topic => {
               return (
                 <li key={topic.slug}>
-                  <Link
+                  <LinkStyled
                     to={`/articles/${topic.slug.toLowerCase()}`}
                     onClick={this.props.toggleMobileMenu}
                   >
                     {utils.capitaliseString(topic.slug)}
-                  </Link>
+                  </LinkStyled>
                 </li>
               );
             })}
