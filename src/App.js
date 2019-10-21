@@ -1,8 +1,6 @@
 import React from 'react';
 import { Router } from '@reach/router';
 import './styles/layout.css';
-import './styles/fonts.css';
-import './styles/colours.css';
 import './styles/mobile-nav.css';
 import styled from 'styled-components';
 import Header from './partials/header/Header';
@@ -13,6 +11,7 @@ import ChangeUser from './pages/ChangeUser';
 import MobileMenu from './partials/header/MobileMenu';
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
+import GlobalStyles from './components/GlobalStyles';
 import throttle from 'lodash.throttle';
 
 const MainGridWrapper = styled.main`
@@ -37,6 +36,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <GlobalStyles />
         <Header
           loggedInUser={this.state.loggedInUser}
           toggleMobileMenu={this.toggleMobileMenu}
