@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from '@reach/router';
 import homepageimg from '../assets/images/homepageimg.jpg';
+import LinkStyled from '../components/LinkStyled';
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -16,10 +16,6 @@ const HomeImage = styled.img`
   height: auto;
 `;
 
-const HomePageLink = styled(Link)`
-  color: inherit;
-`;
-
 const HomePage = () => {
   return (
     <HomeWrapper>
@@ -28,7 +24,7 @@ const HomePage = () => {
         Northcoders News is a social news aggregation, web content rating, and
         discussion website.
       </p>
-      <HomePageLink to={'/articles'}>View some articles</HomePageLink>
+      <LinkStyled to={'/articles'}>View some articles</LinkStyled>
     </HomeWrapper>
   );
 };

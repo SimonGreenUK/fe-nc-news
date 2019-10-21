@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from '@reach/router';
 import * as utils from '../utils/utils';
 import Card from './Card';
 import styled from 'styled-components';
+import LinkStyled from '../components/LinkStyled';
 
 const ArticlePostInfo = styled.div`
   font-size: 0.7rem;
@@ -20,13 +20,13 @@ const ArticleCard = props => {
   } = props.article;
   return (
     <Card>
-      <Link to={`/articles/${topic.toLowerCase()}/${article_id}`}>
+      <LinkStyled to={`/articles/${topic.toLowerCase()}/${article_id}`}>
         <h3>{title}</h3>
-      </Link>
+      </LinkStyled>
       <ArticlePostInfo>
-        <Link to={`/articles/${topic.toLowerCase()}`}>
+        <LinkStyled to={`/articles/${topic.toLowerCase()}`}>
           <span>{utils.capitaliseString(topic)}</span>
-        </Link>
+        </LinkStyled>
         <span> | </span>
         <em>{author}</em>
         <span> | </span>

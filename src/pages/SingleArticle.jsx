@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from '@reach/router';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
@@ -7,6 +6,7 @@ import CommentsList from '../components/CommentsList';
 import Voter from '../components/Voter';
 import Loading from '../components/Loading';
 import styled from 'styled-components';
+import LinkStyled from '../components/LinkStyled';
 
 const SingleArticleWrapper = styled.div`
   padding: 10px 0 35px 0;
@@ -15,15 +15,6 @@ const SingleArticleWrapper = styled.div`
 
 const SingleArticlePostInfo = styled.div`
   font-size: 0.7rem;
-`;
-
-const SingleArticleLink = styled(Link)`
-  color: inherit;
-  text-decoration: none;
-
-  :hover {
-    text-decoration: underline;
-  }
 `;
 
 class SingleArticle extends React.Component {
@@ -48,9 +39,9 @@ class SingleArticle extends React.Component {
             <SingleArticleWrapper>
               <h2>{title}</h2>
               <SingleArticlePostInfo>
-                <SingleArticleLink to={`/articles/${topic}`}>
+                <LinkStyled to={`/articles/${topic}`}>
                   <span>{utils.capitaliseString(topic)}</span>
-                </SingleArticleLink>
+                </LinkStyled>
                 <span> | </span>
                 <em>{author}</em>
                 <span> | </span>
