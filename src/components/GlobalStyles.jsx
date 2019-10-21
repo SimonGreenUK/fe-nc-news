@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     --light-gray: #95b0b5;
     --pale-purple: #8a78ad;
     --dark-purple: #574778;
+    --light-gray-text: #5a5a5a
     --black: #101010;
     
     color: var(--black);

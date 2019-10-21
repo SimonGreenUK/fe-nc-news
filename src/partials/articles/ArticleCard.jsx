@@ -10,6 +10,11 @@ const ArticlePostInfo = styled.div`
 
 const VotesAndCommentsCount = styled.p`
   font-size: 0.8rem;
+  color: var(--light-gray-text);
+`;
+
+const PaleText = styled.span`
+  color: var(--light-gray-text);
 `;
 
 const ArticleCard = props => {
@@ -32,9 +37,11 @@ const ArticleCard = props => {
           <span>{utils.capitaliseString(topic)}</span>
         </LinkStyled>
         <span> | </span>
-        <em>{author}</em>
+        <PaleText>
+          <em>{author}</em>
+        </PaleText>
         <span> | </span>
-        <span>{utils.formatDate(created_at)}</span>
+        <PaleText>{utils.formatDate(created_at)}</PaleText>
       </ArticlePostInfo>
       <VotesAndCommentsCount>
         Votes: {votes} | Comments: {comment_count}
