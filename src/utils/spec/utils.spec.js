@@ -19,7 +19,7 @@ describe('formatDate()', () => {
   });
   it('returns a formatted date', () => {
     expect(formatDate('2018-05-27T03:32:28.514Z')).toEqual(
-      'Sun, May 27, 2018, 4:32 AM GMT+1'
+      '27 May 2018, 04:32'
     );
   });
 });
