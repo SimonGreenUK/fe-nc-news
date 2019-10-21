@@ -4,13 +4,13 @@ import React from 'react';
 const BurgerButton = styled.button`
   position: absolute;
   top: 10px;
-  left: 0;
+  left: 5px;
   display: flex;
   visibility: hidden;
   flex-direction: column;
   align-items: center;
   justify-content: space - around;
-  width: 4rem;
+  width: 3rem;
   height: 4rem;
   background: transparent;
   border: none;
