@@ -5,7 +5,11 @@ import styled from 'styled-components';
 import LinkStyled from '../components/LinkStyled';
 
 const ArticlePostInfo = styled.div`
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+`;
+
+const VotesAndCommentsCount = styled.p`
+  font-size: 0.8rem;
 `;
 
 const ArticleCard = props => {
@@ -32,9 +36,9 @@ const ArticleCard = props => {
         <span> | </span>
         <span>{utils.formatDate(created_at)}</span>
       </ArticlePostInfo>
-      <p>
+      <VotesAndCommentsCount>
         Votes: {votes} | Comments: {comment_count}
-      </p>
+      </VotesAndCommentsCount>
     </Card>
   );
 };

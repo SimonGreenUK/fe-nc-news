@@ -14,7 +14,7 @@ const SingleArticleWrapper = styled.div`
 `;
 
 const SingleArticlePostInfo = styled.div`
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 `;
 
 class SingleArticle extends React.Component {
