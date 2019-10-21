@@ -12,7 +12,6 @@ const UserImg = styled.img`
 const Select = styled.select`
   padding: 8px 15px;
   border: 2px solid var(--light-gray);
-  border-radius: 6px;
   font-family: inherit;
   border-radius: 4px;
   height: 32.5px;
