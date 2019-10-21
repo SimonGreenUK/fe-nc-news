@@ -2,6 +2,7 @@ import React from 'react';
 import * as api from '../utils/api';
 import user_default from '../assets/images/user_default.jpg';
 import { navigate } from '@reach/router';
+import Loading from '../components/Loading';
 import styled from 'styled-components';
 
 const UserImg = styled.img`
@@ -31,37 +32,43 @@ const UserInfo = styled.div`
 
 class UserSelect extends React.Component {
   state = {
-    users: []
+    users: [],
+    isLoading: true
   };
   render() {
     return (
       <UserInfo>
-        <h2>Current user: {this.props.loggedInUser.username}</h2>
-        <UserImg
-          src={this.props.loggedInUser.avatar_url}
-          onError={e => {
-            e.target.onerror = null;
-            e.target.src = user_default;
-          }}
-          alt="user avatar"
-        />
-        <p>Choose a different user</p>
-        <form>
-          <label>
-            <Select
-              onChange={this.handleChange}
-              value={this.props.loggedInUser.username}
-            >
-              {this.state.users.map(user => {
-                return (
-                  <option value={user.username} key={user.username}>
-                    {user.username}
-                  </option>
-                );
-              })}
-            </Select>
-          </label>
-        </form>
+        {!this.state.isLoading && (
+          <>
+            <h2>Current user: {this.props.loggedInUser.username}</h2>
+            <UserImg
+              src={this.props.loggedInUser.avatar_url}
+              onError={e => {
+                e.target.onerror = null;
+                e.target.src = user_default;
+              }}
+              alt="user avatar"
+            />
+            <p>Choose a different user</p>
+            <form>
+              <label>
+                <Select
+                  onChange={this.handleChange}
+                  value={this.props.loggedInUser.username}
+                >
+                  {this.state.users.map(user => {
+                    return (
+                      <option value={user.username} key={user.username}>
+                        {user.username}
+                      </option>
+                    );
+                  })}
+                </Select>
+              </label>
+            </form>
+          </>
+        )}
+        {this.state.isLoading && <Loading />}
       </UserInfo>
     );
   }
@@ -74,7 +81,7 @@ class UserSelect extends React.Component {
     api
       .getAllUsers()
       .then(users => {
-        this.setState({ users });
+        this.setState({ users, isLoading: false });
       })
       .catch(({ response: { data } }) => {
         navigate(`/err`, {
