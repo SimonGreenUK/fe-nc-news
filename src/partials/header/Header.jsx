@@ -55,6 +55,7 @@ const ChangeUserLink = styled(Link)`
 const UserImg = styled.img`
   max-width: 40px;
   height: auto;
+  border-radius: 50%;
 `;
 
 const HeaderTitleLink = styled(Link)`

@@ -19,6 +19,7 @@ const Form = styled.form`
 const UserImg = styled.img`
   max-width: 40px;
   height: auto;
+  margin-right: 10px;
 `;
 
 const UserInfoWrapper = styled.div`
