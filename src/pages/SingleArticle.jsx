@@ -17,6 +17,10 @@ const SingleArticlePostInfo = styled.div`
   font-size: 0.8rem;
 `;
 
+const PaleText = styled.span`
+  color: var(--light-gray-text);
+`;
+
 class SingleArticle extends React.Component {
   state = {
     article: {},
@@ -43,9 +47,11 @@ class SingleArticle extends React.Component {
                   <span>{utils.capitaliseString(topic)}</span>
                 </LinkStyled>
                 <span> | </span>
-                <em>{author}</em>
+                <PaleText>
+                  <em>{author}</em>
+                </PaleText>
                 <span> | </span>
-                <span>{utils.formatDate(created_at)}</span>
+                <PaleText>{utils.formatDate(created_at)}</PaleText>
               </SingleArticlePostInfo>
 
               <p>{body}</p>
