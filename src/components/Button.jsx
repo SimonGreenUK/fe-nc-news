@@ -13,6 +13,9 @@ const ButtonPrimary = styled.button`
   margin: 5px 10px 5px 0;
   transition: all 0.3s ease;
   color: inherit;
+  :disabled {
+    color: var(--light-gray);
+  }
 
   :hover {
     background-color: var(--turquoise-main);
