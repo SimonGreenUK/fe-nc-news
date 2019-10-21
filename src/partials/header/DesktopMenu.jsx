@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const NavLink = styled(Link)`
   color: white;
   text-decoration: none;
-  padding: 12px;
+  padding: 12px 16px 12px 12px;
   border-bottom: 4px solid transparent;
   transition: all 0.3s ease;
   :hover {
@@ -22,11 +22,10 @@ const DesktopMenuList = styled.ul`
   display: flex;
   align-items: center;
   padding: 0;
-  margin-bottom: 8px;
+  margin-bottom: 13px;
 `;
 
 const DesktopMenuListItem = styled.li`
-  padding: 5px;
   list-style: none;
 `;
 
