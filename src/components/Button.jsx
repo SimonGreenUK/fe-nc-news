@@ -10,7 +10,7 @@ const ButtonPrimary = styled.button`
   text-transform: uppercase;
   width: 7rem;
   height: 2rem;
-  margin: 5px;
+  margin: 5px 10px 5px 0;
   transition: all 0.3s ease;
   color: inherit;
 
