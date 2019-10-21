@@ -31,12 +31,7 @@ const MainContent = styled.div`
 
 class App extends React.Component {
   state = {
-    loggedInUser: {
-      username: 'jessjelly',
-      avatar_url:
-        'https://s-media-cache-ak0.pinimg.com/564x/39/62/ec/3962eca164e60cf46f979c1f57d4078b.jpg',
-      name: 'Jess Jelly'
-    },
+    loggedInUser: {},
     mobileMenuOpen: false
   };
   render() {
@@ -76,6 +71,16 @@ class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
+    let previousUser = {
+      username: 'jessjelly',
+      avatar_url:
+        'https://s-media-cache-ak0.pinimg.com/564x/39/62/ec/3962eca164e60cf46f979c1f57d4078b.jpg',
+      name: 'Jess Jelly'
+    };
+    if (localStorage.loggedInUser) {
+      previousUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    }
+    this.setState({ loggedInUser: previousUser });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -92,7 +97,10 @@ class App extends React.Component {
   }
 
   updateLoggedInUser = user => {
+    // console.log(user);
     this.setState({ loggedInUser: user });
+    const userData = JSON.stringify(user);
+    localStorage.setItem('loggedInUser', userData);
   };
 
   toggleMobileMenu = () => {
