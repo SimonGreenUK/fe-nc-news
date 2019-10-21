@@ -1,19 +1,40 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const LoadingWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 40vh;
+`;
+
+const BounceAnimation = keyframes`
+  0% { margin-bottom: 0; }
+  50% { margin-bottom: 15px }
+  100% { margin-bottom: 0 }
+`;
+const DotWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+`;
+const Dot = styled.div`
+  background-color: var(--black);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  animation: ${BounceAnimation} 0.5s linear infinite;
+  animation-delay: ${props => props.delay};
 `;
 
 const Loading = () => {
   return (
     <LoadingWrapper>
-      <h3>
-        <strong>LOADING...</strong>
-      </h3>
+      <DotWrapper>
+        <Dot delay="0s" />
+        <Dot delay=".1s" />
+        <Dot delay=".2s" />
+      </DotWrapper>
     </LoadingWrapper>
   );
 };
