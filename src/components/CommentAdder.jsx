@@ -24,7 +24,7 @@ const UserImg = styled.img`
 const UserInfoWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  padding-top: 10px;
+  padding-top: 35px;
 `;
 
 const UserInfo = styled.div`
