@@ -5,13 +5,13 @@ import './styles/fonts.css';
 import './styles/colours.css';
 import './styles/mobile-nav.css';
 import styled from 'styled-components';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './partials/header/Header';
+import Footer from './partials/footer/Footer';
 import ArticlesList from './pages/ArticlesList';
 import SingleArticle from './pages/SingleArticle';
 import ChangeUser from './pages/ChangeUser';
-import MobileMenu from './components/MobileMenu';
-import ErrorPage from './components/ErrorPage';
+import MobileMenu from './partials/header/MobileMenu';
+import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import throttle from 'lodash.throttle';
 

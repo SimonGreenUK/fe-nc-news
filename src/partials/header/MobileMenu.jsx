@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from '@reach/router';
 import { navigate } from '@reach/router';
-import * as api from '../utils/api';
-import * as utils from '../utils/utils';
+import * as api from '../../utils/api';
+import * as utils from '../../utils/utils';
 import styled from 'styled-components';
-import LinkStyled from '../components/LinkStyled';
+import LinkStyled from '../../components/LinkStyled';
 
 const MobileMenuWrapper = styled.div`
   display: flex;

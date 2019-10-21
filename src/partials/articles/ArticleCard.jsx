@@ -1,8 +1,8 @@
 import React from 'react';
-import * as utils from '../utils/utils';
-import Card from './Card';
+import * as utils from '../../utils/utils';
+import Card from '../../components/Card';
 import styled from 'styled-components';
-import LinkStyled from '../components/LinkStyled';
+import LinkStyled from '../../components/LinkStyled';
 
 const ArticlePostInfo = styled.div`
   font-size: 0.8rem;

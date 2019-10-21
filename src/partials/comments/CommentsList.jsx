@@ -1,6 +1,6 @@
 import React from 'react';
 import { navigate } from '@reach/router';
-import * as api from '../utils/api';
+import * as api from '../../utils/api';
 import CommentCard from './CommentCard';
 import CommentAdder from './CommentAdder';
 import styled from 'styled-components';

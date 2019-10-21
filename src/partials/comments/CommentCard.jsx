@@ -1,8 +1,8 @@
 import React from 'react';
-import * as utils from '../utils/utils';
-import Voter from './Voter';
-import Card from './Card';
-import Button from './Button';
+import * as utils from '../../utils/utils';
+import Voter from '../../components/Voter';
+import Card from '../../components/Card';
+import Button from '../../components/Button';
 import styled from 'styled-components';
 
 const ErrorMessage = styled.p`

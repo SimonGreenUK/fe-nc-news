@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import user_default from '../assets/images/user_default.jpg';
+import user_default from '../../assets/images/user_default.jpg';
 import DesktopMenu from './DesktopMenu';
 import HamburgerIcon from './HamburgerIcon';
 import styled from 'styled-components';

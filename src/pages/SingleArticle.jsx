@@ -2,7 +2,7 @@ import React from 'react';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
-import CommentsList from '../components/CommentsList';
+import CommentsList from '../partials/comments/CommentsList';
 import Voter from '../components/Voter';
 import Loading from '../components/Loading';
 import styled from 'styled-components';

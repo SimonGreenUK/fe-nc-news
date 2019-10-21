@@ -2,7 +2,7 @@ import React from 'react';
 import { navigate } from '@reach/router';
 import * as api from '../utils/api';
 import * as utils from '../utils/utils';
-import ArticleCard from '../components/ArticleCard';
+import ArticleCard from '../partials/articles/ArticleCard';
 import SortSelect from '../components/SortSelect';
 import Loading from '../components/Loading';
 import styled from 'styled-components';

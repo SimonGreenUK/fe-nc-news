@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import user_default from '../assets/images/user_default.jpg';
-import Button from './Button';
-import Textarea from './Textarea';
+import user_default from '../../assets/images/user_default.jpg';
+import Button from '../../components/Button';
+import Textarea from '../../components/Textarea';
 
 const CommentAdderWrapper = styled.div`
   display: flex;
