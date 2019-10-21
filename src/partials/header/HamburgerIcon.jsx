@@ -9,13 +9,13 @@ const BurgerButton = styled.button`
   visibility: hidden;
   flex-direction: column;
   align-items: center;
-  justify-content: space - around;
+  justify-content: space-around;
   width: 3rem;
-  height: 4rem;
+  height: 40px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0 0 5px 0;
+  padding: 5px 0 5px 0;
   z-index: 10;
 
   @media all and (max-width: 750px) {
@@ -24,10 +24,10 @@ const BurgerButton = styled.button`
 `;
 
 const BurgerBar = styled.div`
-  width: 35px;
-  height: 3px;
+  width: 30px;
+  height: 2px;
   background-color: white;
-  margin: 8px 0;
+  margin: 3px 0 3px 0;
   transition: 0.3s;
 `;
 
