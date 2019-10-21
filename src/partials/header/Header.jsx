@@ -65,8 +65,12 @@ const LoggedInAs = styled.span`
 `;
 
 const HeaderTitleLink = styled(Link)`
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
+  font-family: 'Montserrat', sans-serif;
   color: inherit;
+  text-transform: uppercase;
   text-decoration: none;
+  font-size: 1.75rem;
 `;
 
 const Header = props => {
@@ -91,7 +95,7 @@ const Header = props => {
       </HeaderUserInfoWrapper>
       <HeaderTitleWrapper>
         <HeaderTitleLink to={'/'}>
-          <h1>NC NEWS</h1>
+          <h1>NC News</h1>
         </HeaderTitleLink>
       </HeaderTitleWrapper>
       <HeaderNav>
