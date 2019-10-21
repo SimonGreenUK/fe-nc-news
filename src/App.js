@@ -17,7 +17,7 @@ import throttle from 'lodash.throttle';
 const MainGridWrapper = styled.main`
   grid-area: main;
   display: grid;
-  grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 850px) minmax(
+  grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 775px) minmax(
       1.2rem,
       1fr
     );
