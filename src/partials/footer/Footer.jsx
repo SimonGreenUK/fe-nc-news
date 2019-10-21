@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
   grid-area: footer;
-  border: 1px solid lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
