@@ -9,7 +9,6 @@ const HomeWrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 60vh;
-  color: black;
 `;
 
 const HomeImage = styled.img`
