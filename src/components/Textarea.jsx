@@ -5,7 +5,7 @@ const TextareaPrimary = styled.textarea`
   height: 100px;
   width: 300px;
   padding: 12px 10px;
-  margin: 8px 10px 0 0;
+  margin: 8px 0 8px 0;
   font-family: inherit;
   border: 2px solid var(--light-gray);
   transition: border 0.3s ease;
