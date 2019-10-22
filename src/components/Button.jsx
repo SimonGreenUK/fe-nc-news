@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const ButtonPrimary = styled.button`
   font-size: 0.7rem;
   font-family: inherit;
-  /* font-weight: 900; */
   border: 1px solid var(--turquoise-main);
   border-radius: 2rem;
   text-transform: uppercase;
