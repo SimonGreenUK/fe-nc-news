@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledFooter = styled.footer`
   grid-area: footer;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--black);
@@ -21,10 +22,20 @@ const StyledFooter = styled.footer`
   }
 `;
 
+const CreatedCredit = styled.p`
+  margin: 0 0 0 0;
+`;
+
+const IconCredit = styled.p`
+  margin: 0 0 0 0;
+  color: var(--light-gray-text);
+  font-size: 0.6rem;
+`;
+
 const Footer = () => {
   return (
     <StyledFooter className="footer">
-      <p>
+      <CreatedCredit>
         Created by{' '}
         <a
           href="https://www.simongreen.dev/"
@@ -33,7 +44,10 @@ const Footer = () => {
         >
           Simon Green
         </a>
-      </p>
+      </CreatedCredit>
+      <IconCredit>
+        Icons by <a href="https://fontawesome.com/license">Font Awesome</a>
+      </IconCredit>
     </StyledFooter>
   );
 };
