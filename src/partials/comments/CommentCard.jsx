@@ -15,6 +15,10 @@ const PostedDate = styled.span`
   font-size: 0.7rem;
 `;
 
+const DeleteButton = styled(Button)`
+  width: 9rem;
+`;
+
 const CommentCard = props => {
   const handleClick = e => {
     const { name } = e.target;
@@ -30,9 +34,9 @@ const CommentCard = props => {
       <p>{body}</p>
       <Voter votes={votes} type="comments" id={comment_id} />
       {loggedInUser.username === author && (
-        <Button onClick={handleClick} name={comment_id}>
+        <DeleteButton onClick={handleClick} name={comment_id}>
           Delete comment
-        </Button>
+        </DeleteButton>
       )}
       {props.deleteError && (
         <ErrorMessage>
