@@ -9,6 +9,7 @@ const HomeWrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 60vh;
+  text-align: center;
 `;
 
 const HomeImage = styled.img`
