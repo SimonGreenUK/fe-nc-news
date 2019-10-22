@@ -8,6 +8,7 @@ import styled from 'styled-components';
 const UserImg = styled.img`
   max-width: 150px;
   height: auto;
+  border-radius: 50%;
 `;
 
 const Select = styled.select`
