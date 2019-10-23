@@ -34,8 +34,7 @@ const MobileMenuInnerWrapper = styled.div`
 
 class MobileMenu extends React.Component {
   state = {
-    topics: [],
-    isLoading: true
+    topics: []
   };
   render() {
     return (
@@ -44,35 +43,25 @@ class MobileMenu extends React.Component {
           this.props.mobileMenuOpen ? 'mobile-nav-visible' : 'mobile-nav-hidden'
         }
       >
-        {!this.state.isLoading && (
-          <MobileMenuInnerWrapper>
-            <li>
-              <LinkStyled
-                to={'/articles'}
-                onClick={this.props.toggleMobileMenu}
-              >
-                All
-              </LinkStyled>
-            </li>
-            {this.state.topics.map(topic => {
-              return (
-                <li key={topic.slug}>
-                  <LinkStyled
-                    to={`/articles/${topic.slug.toLowerCase()}`}
-                    onClick={this.props.toggleMobileMenu}
-                  >
-                    {utils.capitaliseString(topic.slug)}
-                  </LinkStyled>
-                </li>
-              );
-            })}
-          </MobileMenuInnerWrapper>
-        )}
-        {this.state.isLoading && (
-          <h2>
-            <strong>LOADING...</strong>
-          </h2>
-        )}
+        <MobileMenuInnerWrapper>
+          <li>
+            <LinkStyled to={'/articles'} onClick={this.props.toggleMobileMenu}>
+              All
+            </LinkStyled>
+          </li>
+          {this.state.topics.map(topic => {
+            return (
+              <li key={topic.slug}>
+                <LinkStyled
+                  to={`/articles/${topic.slug.toLowerCase()}`}
+                  onClick={this.props.toggleMobileMenu}
+                >
+                  {utils.capitaliseString(topic.slug)}
+                </LinkStyled>
+              </li>
+            );
+          })}
+        </MobileMenuInnerWrapper>
       </MobileMenuWrapper>
     );
   }
@@ -85,7 +74,7 @@ class MobileMenu extends React.Component {
     api
       .getTopics()
       .then(topics => {
-        this.setState({ topics, isLoading: false });
+        this.setState({ topics });
       })
       .catch(({ response: { data } }) => {
         navigate(`/err`, {
