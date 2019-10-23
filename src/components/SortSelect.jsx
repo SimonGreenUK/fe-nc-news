@@ -7,7 +7,7 @@ const Select = styled.select`
   border-radius: 6px;
   font-family: inherit;
   border-radius: 4px;
-  height: 32.5px;
+  height: 34.5px;
   cursor: pointer;
   min-width: 100px;
   transition: all 0.3s ease;
