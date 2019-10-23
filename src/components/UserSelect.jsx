@@ -16,9 +16,9 @@ const Select = styled.select`
   border: 2px solid var(--light-gray);
   font-family: inherit;
   border-radius: 4px;
-  height: 32.5px;
+  height: 34.5px;
   cursor: pointer;
-  min-width: 100px;
+  min-width: 110px;
   :hover {
     border: 2px solid var(--dark-gray);
   }
