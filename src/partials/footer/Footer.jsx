@@ -46,7 +46,14 @@ const Footer = () => {
         </a>
       </CreatedCredit>
       <IconCredit>
-        Icons by <a href="https://fontawesome.com/license">Font Awesome</a>
+        Icons by{' '}
+        <a
+          href="https://fontawesome.com/license"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Font Awesome
+        </a>
       </IconCredit>
     </StyledFooter>
   );
