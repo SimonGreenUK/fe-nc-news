@@ -31,8 +31,7 @@ const DesktopMenuListItem = styled.li`
 
 class DesktopMenu extends React.Component {
   state = {
-    topics: [],
-    isLoading: true
+    topics: []
   };
   render() {
     return (
@@ -63,7 +62,7 @@ class DesktopMenu extends React.Component {
     api
       .getTopics()
       .then(topics => {
-        this.setState({ topics, isLoading: false });
+        this.setState({ topics });
       })
       .catch(({ response: { data } }) => {
         navigate(`/err`, {
