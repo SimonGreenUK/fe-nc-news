@@ -13,6 +13,9 @@ const TextareaPrimary = styled.textarea`
     border: 2px solid var(--dark-gray);
   }
   border-radius: 2px;
+  :required {
+    box-shadow: none;
+  }
 `;
 
 const Textarea = props => {
