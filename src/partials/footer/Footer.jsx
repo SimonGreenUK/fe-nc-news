@@ -28,7 +28,7 @@ const CreatedCredit = styled.p`
 
 const IconCredit = styled.p`
   margin: 0 0 0 0;
-  color: var(--light-gray-text);
+  color: #888888;
   font-size: 0.6rem;
 `;
 
